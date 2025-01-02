@@ -19,7 +19,7 @@ jobs:
           php composer.phar install
 
       - name: docs
-        run: bash gen_doc.sh
+        run: bash gen_docs.sh
  
       - name: dump
         run: php dump.php
