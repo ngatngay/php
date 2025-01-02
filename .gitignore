@@ -1,0 +1,7 @@
+.idea/
+vendor/
+
+composer.phar
+apigen.phar
+*.cache
+composer.lock

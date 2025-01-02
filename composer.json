@@ -1,0 +1,32 @@
+{
+    "name": "ngatngay/ngatngay",
+    "description": "ngatngay php pro max",
+    "authors": [
+        {
+            "name": "ngatngay",
+            "email": "ngatngay@ngatngay.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "symfony/cache": "7.*",
+        "php-curl-class/php-curl-class": "^11.0",
+        "symfony/var-dumper": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NgatNgay\\": "src/"
+        },
+        "files": [
+            "src/Helper/function.php"
+        ]
+    },
+    "require-dev": {
+        "pestphp/pest": "3.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
