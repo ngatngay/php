@@ -7,12 +7,12 @@ love you @ging-dev
 ## Install
 
 ```
-composer require ngatngay/helper-php:dev-main
+composer require ngatngay/ngatngay:dev-main
 ```
 
 ## API
 
-https://ngatngay.github.io/helper-php/
+https://ngatngay.github.io/php/
 
 ## Test (not work)
 
