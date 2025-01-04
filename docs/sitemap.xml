@@ -5,9 +5,11 @@
 		<url><loc>tree.html</loc></url>
 
 			<url><loc>namespace-NgatNgay.html</loc></url>
+			<url><loc>namespace-NgatNgay.Browser.html</loc></url>
 			<url><loc>namespace-NgatNgay.Database.html</loc></url>
 			<url><loc>namespace-NgatNgay.Helper.html</loc></url>
 
+			<url><loc>NgatNgay.Browser.Browser.html</loc></url>
 			<url><loc>NgatNgay.Database.DB.html</loc></url>
 			<url><loc>NgatNgay.Database.Row.html</loc></url>
 			<url><loc>NgatNgay.Database.Statement.html</loc></url>
@@ -25,6 +27,7 @@
 			<url><loc>function-NgatNgay.Helper.redirect.html</loc></url>
 			<url><loc>function-NgatNgay.Helper.refresh.html</loc></url>
 
+			<url><loc>source-Browser.Browser.html</loc></url>
 			<url><loc>source-Database.DB.html</loc></url>
 			<url><loc>source-Database.Row.html</loc></url>
 			<url><loc>source-Database.Statement.html</loc></url>
