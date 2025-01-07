@@ -1,6 +1,6 @@
 <?php
 
-namespace NgatNgay\Helper;
+namespace NgatNgay\Http;
 
 class Request
 {
@@ -8,6 +8,7 @@ class Request
     public array $post;
     public array $header;
     public array $cookie;
+    public array $session;
     public array $server;
     public array $request;
 
@@ -17,11 +18,25 @@ class Request
         ksort($this->server);
 
         $this->header = $this->initHeader();
+        
+        /*
+        {
+    $request_uri = @parse_url($_SERVER['REQUEST_URI'] ?? '');
+    $add_get = [];
 
-        $this->get = $_GET;
-        $this->post = $_POST;
-        $this->cookie = $_COOKIE;
-        $this->request = $_REQUEST;
+    if (isset($request_uri['query'])) {
+        parse_str($request_uri['query'], $add_get);
+    }
+
+    $_GET = array_merge($_GET, $add_get);
+    $_REQUEST = array_merge($_REQUEST, $add_get);
+}
+*/
+
+        $this->get = &$_GET;
+        $this->post = &$_POST;
+        $this->cookie = &$_COOKIE;
+        $this->request = &$_REQUEST;
     }
 
     private function initHeader()
@@ -142,6 +157,34 @@ public function getReferer()
     public function hasCookie($key)
     {
         return isset($this->cookie[$key]);
+    }
+    
+    public function sessionStart(string $prefix = 'sess_', int $ttl = 86400)
+    {
+        session_set_save_handler(new \NgatNgay\Session\Storage\Apcu($prefix, $ttl));
+
+        if (PHP_SESSION_ACTIVE === session_status()) {
+            throw new \RuntimeException('Failed to start the session: already started by PHP.');
+        }
+        
+        if (!\session_start()) {
+            throw new \RuntimeException('Failed to start the session.');
+        }
+        $this->session = &$_SESSION;
+    }
+    public function session($key, $default = null)
+    {
+        return $this->session[$key] ?? $default;
+    }
+    public function hasSession($key)
+    {
+        return isset($this->session[$key]);
+    }
+    public function setSession($key, $value) {
+        $_SESSION[$key] = $value;
+    }
+    public function removeSession($key) {
+        unset($_SESSION[$key]);
     }
 
     public function server($key, $default = null)

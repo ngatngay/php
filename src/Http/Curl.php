@@ -1,6 +1,6 @@
 <?php
 
-namespace NgatNgay\Helper;
+namespace NgatNgay\Http;
 
 class Curl extends \Curl\Curl {
     public function __construct($base_url = null, $options = [])

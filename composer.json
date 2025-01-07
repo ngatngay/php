@@ -9,24 +9,28 @@
     ],
     "require": {
         "php": ">=7.4",
-        "symfony/cache": "7.*",
+        "symfony/cache": "*",
         "php-curl-class/php-curl-class": "^11.0",
-        "symfony/var-dumper": "^7.2"
+        "symfony/var-dumper": "*"
     },
     "autoload": {
         "psr-4": {
             "NgatNgay\\": "src/"
         },
         "files": [
-            "src/Helper/function.php"
+            "src/function.php"
         ]
     },
-    "require-dev": {
-        "pestphp/pest": "3.x-dev"
-    },
-    "config": {
+    "config": {    
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        },
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.23"
     }
 }

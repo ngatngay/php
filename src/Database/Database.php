@@ -4,7 +4,7 @@ namespace NgatNgay\Database;
 
 use PDO;
 
-class DB
+class Database
 {
     public function __construct(private $pdo)
     {
@@ -12,7 +12,7 @@ class DB
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [Statement::class]);
     }
 
-    public function query($sql, $params = null)
+    public function query(string $sql, $params = null)
     {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
@@ -20,7 +20,7 @@ class DB
         return $stmt;
     }
 
-    public function insert($table, $params)
+    public function insert(string $table, array $params)
     {
         echo $sql = 'insert into "' . $table . '"'
             . ' (' . implode(',', $this->buildName(array_keys($params))) . ')'
@@ -28,42 +28,40 @@ class DB
         //dump(array_values($params));
         $this->query($sql, array_values($params));
 
-
-
         return $this->pdo->lastInsertId();
     }
 
-    public function update($sql, $params = null)
+    public function update(string $sql, $params = null)
     {
         $stmt = $this->query($sql, $params);
 
         return $stmt->rowCount();
     }
 
-    public function fetch($sql, $params = null)
+    public function fetch(string $sql, $params = null)
     {
         return $this->query($sql, $params)
             ->fetch();
     }
 
-    public function fetchAll($sql, $params = null)
+    public function fetchAll(string $sql, $params = null)
     {
         return $this->query($sql, $params)
             ->fetchAll();
     }
 
-    public function getOffset($page, $perPage)
+    public function getOffset(int $page, int $perPage)
     {
         return $page * $perPage - $perPage;
     }
 
-    public function fetchColumn($sql, $params = null, $column = 0)
+    public function fetchColumn(string $sql, $params = null, $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
     }
 
-    public function quote($str)
+    public function quote(string $str)
     {
         return $this->pdo->quote($str);
     }
