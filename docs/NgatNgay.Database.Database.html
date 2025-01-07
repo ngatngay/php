@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Class NgatNgay\Database\DB |  API</title>
+	<title>Class NgatNgay\Database\Database |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -19,14 +19,17 @@
 			<li class="menuGroup-item active">
 				<a href="namespace-NgatNgay.html">NgatNgay</a>
 	<ul>
-			<li class="menuGroup-item">
-				<a href="namespace-NgatNgay.Browser.html">Browser</a>
-			</li>
 			<li class="menuGroup-item active">
 				<a href="namespace-NgatNgay.Database.html">Database</a>
 			</li>
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Helper.html">Helper</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Http.html">Http</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Session.html">Session</a>
 			</li>
 	</ul>
 			</li>
@@ -37,8 +40,8 @@
 			<h3>Classes</h3>
 			<ul>
 					<li class="active">
-						<a href="NgatNgay.Database.DB.html">
-							DB
+						<a href="NgatNgay.Database.Database.html">
+							Database
 						</a>
 					</li>
 					<li>
@@ -69,7 +72,7 @@
 						<a href="namespace-NgatNgay.Database.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="NgatNgay.Database.DB.html">Class</a></li>				<li>
+<li class="active"><a href="NgatNgay.Database.Database.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -85,7 +88,7 @@
 
 		<div class="layout-content">
 		<h1>
-			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Database.html">Database</a>\<a href="NgatNgay.Database.DB.html">DB</a>
+			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Database.html">Database</a>\<a href="NgatNgay.Database.Database.html">Database</a>
 		</h1>
 
 
@@ -98,7 +101,7 @@
 
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-Database.DB.html#7" title="Go to source code">Database/DB.php</a><br>
+			<b>Located at</b> <a href="source-Database.Database.html#7" title="Go to source code">Database/Database.php</a><br>
 		</div>
 
 
@@ -119,7 +122,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#9-13" title="Go to source code">__construct</a>(<span><var>$pdo</var></span>)</code>
+				<code><a href="source-Database.Database.html#9-13" title="Go to source code">__construct</a>(<span><var>$pdo</var></span>)</code>
 
 
 
@@ -145,7 +148,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#15-21" title="Go to source code">query</a>(<span><var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Database.Database.html#15-21" title="Go to source code">query</a>(<span>string <var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -171,7 +174,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#23-34" title="Go to source code">insert</a>(<span><var>$table</var></span>, <span><var>$params</var></span>)</code>
+				<code><a href="source-Database.Database.html#23-32" title="Go to source code">insert</a>(<span>string <var>$table</var></span>, <span>array <var>$params</var></span>)</code>
 
 
 
@@ -197,7 +200,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#36-41" title="Go to source code">update</a>(<span><var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Database.Database.html#34-39" title="Go to source code">update</a>(<span>string <var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -223,7 +226,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#43-47" title="Go to source code">fetch</a>(<span><var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Database.Database.html#41-45" title="Go to source code">fetch</a>(<span>string <var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -249,7 +252,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#49-53" title="Go to source code">fetchAll</a>(<span><var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Database.Database.html#47-51" title="Go to source code">fetchAll</a>(<span>string <var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -275,7 +278,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#55-58" title="Go to source code">getOffset</a>(<span><var>$page</var></span>, <span><var>$perPage</var></span>)</code>
+				<code><a href="source-Database.Database.html#53-56" title="Go to source code">getOffset</a>(<span>int <var>$page</var></span>, <span>int <var>$perPage</var></span>)</code>
 
 
 
@@ -301,7 +304,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#60-64" title="Go to source code">fetchColumn</a>(<span><var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>, <span><var>$column</var> = <span class="php-num">0</span></span>)</code>
+				<code><a href="source-Database.Database.html#58-62" title="Go to source code">fetchColumn</a>(<span>string <var>$sql</var></span>, <span><var>$params</var> = <span class="php-kw">null</span></span>, <span><var>$column</var> = <span class="php-num">0</span></span>)</code>
 
 
 
@@ -327,7 +330,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#66-69" title="Go to source code">quote</a>(<span><var>$str</var></span>)</code>
+				<code><a href="source-Database.Database.html#64-67" title="Go to source code">quote</a>(<span>string <var>$str</var></span>)</code>
 
 
 
@@ -353,7 +356,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Database.DB.html#71-76" title="Go to source code">buildName</a>(<span><var>$arr</var></span>)</code>
+				<code><a href="source-Database.Database.html#69-74" title="Go to source code">buildName</a>(<span><var>$arr</var></span>)</code>
 
 
 

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Class NgatNgay\Browser\Browser |  API</title>
+	<title>Class NgatNgay\Http\Browser |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -19,14 +19,17 @@
 			<li class="menuGroup-item active">
 				<a href="namespace-NgatNgay.html">NgatNgay</a>
 	<ul>
-			<li class="menuGroup-item active">
-				<a href="namespace-NgatNgay.Browser.html">Browser</a>
-			</li>
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Database.html">Database</a>
 			</li>
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Helper.html">Helper</a>
+			</li>
+			<li class="menuGroup-item active">
+				<a href="namespace-NgatNgay.Http.html">Http</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Session.html">Session</a>
 			</li>
 	</ul>
 			</li>
@@ -37,8 +40,18 @@
 			<h3>Classes</h3>
 			<ul>
 					<li class="active">
-						<a href="NgatNgay.Browser.Browser.html">
+						<a href="NgatNgay.Http.Browser.html">
 							Browser
+						</a>
+					</li>
+					<li>
+						<a href="NgatNgay.Http.Curl.html">
+							Curl
+						</a>
+					</li>
+					<li>
+						<a href="NgatNgay.Http.Request.html">
+							Request
 						</a>
 					</li>
 			</ul>
@@ -56,10 +69,10 @@
 				</li>
 				<li>
 					
-						<a href="namespace-NgatNgay.Browser.html">Namespace</a>
+						<a href="namespace-NgatNgay.Http.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="NgatNgay.Browser.Browser.html">Class</a></li>				<li>
+<li class="active"><a href="NgatNgay.Http.Browser.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -75,7 +88,7 @@
 
 		<div class="layout-content">
 		<h1>
-			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Browser.html">Browser</a>\<a href="NgatNgay.Browser.Browser.html">Browser</a>
+			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Http.html">Http</a>\<a href="NgatNgay.Http.Browser.html">Browser</a>
 		</h1>
 
 
@@ -99,7 +112,7 @@
 
 	<ul class="classTree">
 	<li>
-<b><span class="active">NgatNgay\Browser\Browser</span></b>
+<b><span class="active">NgatNgay\Http\Browser</span></b>
 
 
 	</li>
@@ -109,7 +122,7 @@
 			</div>
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-Browser.Browser.html#8" title="Go to source code">Browser/Browser.php</a><br>
+			<b>Located at</b> <a href="source-Http.Browser.html#10" title="Go to source code">Http/Browser.php</a><br>
 		</div>
 
 
@@ -130,7 +143,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Browser.Browser.html#9-18" title="Go to source code">__construct</a>(<span>?<span title="NgatNgay\Browser\HttpClientInterface">HttpClientInterface</span> <var>$client</var> = <span class="php-kw">null</span></span>, <span>?<span title="NgatNgay\Browser\History">History</span> <var>$history</var> = <span class="php-kw">null</span></span>, <span>?<span title="NgatNgay\Browser\CookieJar">CookieJar</span> <var>$cookieJar</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Browser.html#11-14" title="Go to source code">__construct</a>(<span>?<span title="Symfony\Contracts\HttpClient\HttpClientInterface">HttpClientInterface</span> <var>$client</var> = <span class="php-kw">null</span></span>, <span>?<span title="Symfony\Component\BrowserKit\History">History</span> <var>$history</var> = <span class="php-kw">null</span></span>, <span>?<span title="Symfony\Component\BrowserKit\CookieJar">CookieJar</span> <var>$cookieJar</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -143,6 +156,32 @@
 			</td>
 		<td class="table-anchor">
 			<a href="#___construct">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="setUserAgent" id="_setUserAgent">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Http.Browser.html#16-18" title="Go to source code">setUserAgent</a>(<span>string <var>$userAgent</var></span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_setUserAgent">#</a>
 		</td>
 	</tr>
 		</table>
