@@ -6,41 +6,42 @@
 
 			<url><loc>namespace-NgatNgay.html</loc></url>
 			<url><loc>namespace-NgatNgay.Database.html</loc></url>
-			<url><loc>namespace-NgatNgay.Helper.html</loc></url>
 			<url><loc>namespace-NgatNgay.Http.html</loc></url>
 			<url><loc>namespace-NgatNgay.Session.html</loc></url>
 			<url><loc>namespace-NgatNgay.Session.Storage.html</loc></url>
 
+			<url><loc>NgatNgay.Arr.html</loc></url>
+			<url><loc>NgatNgay.Cache.html</loc></url>
+			<url><loc>NgatNgay.Database.html</loc></url>
 			<url><loc>NgatNgay.Database.Database.html</loc></url>
 			<url><loc>NgatNgay.Database.Row.html</loc></url>
 			<url><loc>NgatNgay.Database.Statement.html</loc></url>
-			<url><loc>NgatNgay.Helper.Arr.html</loc></url>
-			<url><loc>NgatNgay.Helper.Cache.html</loc></url>
-			<url><loc>NgatNgay.Helper.Date.html</loc></url>
-			<url><loc>NgatNgay.Helper.FS.html</loc></url>
-			<url><loc>NgatNgay.Helper.Str.html</loc></url>
+			<url><loc>NgatNgay.Date.html</loc></url>
+			<url><loc>NgatNgay.FS.html</loc></url>
 			<url><loc>NgatNgay.Http.Browser.html</loc></url>
 			<url><loc>NgatNgay.Http.Curl.html</loc></url>
 			<url><loc>NgatNgay.Http.Request.html</loc></url>
 			<url><loc>NgatNgay.IResponse.html</loc></url>
 			<url><loc>NgatNgay.Session.Storage.Apcu.html</loc></url>
+			<url><loc>NgatNgay.Str.html</loc></url>
 
 			<url><loc>function-NgatNgay.request.html</loc></url>
 			<url><loc>function-NgatNgay.response.html</loc></url>
 			<url><loc>function-NgatNgay.redirect.html</loc></url>
 			<url><loc>function-NgatNgay.refresh.html</loc></url>
 
+			<url><loc>source-Arr.html</loc></url>
+			<url><loc>source-Cache.html</loc></url>
+			<url><loc>source-Database.html</loc></url>
 			<url><loc>source-Database.Database.html</loc></url>
 			<url><loc>source-Database.Row.html</loc></url>
 			<url><loc>source-Database.Statement.html</loc></url>
-			<url><loc>source-Helper.Arr.html</loc></url>
-			<url><loc>source-Helper.Cache.html</loc></url>
-			<url><loc>source-Helper.Date.html</loc></url>
-			<url><loc>source-Helper.FS.html</loc></url>
-			<url><loc>source-Helper.Str.html</loc></url>
+			<url><loc>source-Date.html</loc></url>
+			<url><loc>source-FS.html</loc></url>
 			<url><loc>source-Http.Browser.html</loc></url>
 			<url><loc>source-Http.Curl.html</loc></url>
 			<url><loc>source-Http.Request.html</loc></url>
 			<url><loc>source-Session.Storage.Apcu.html</loc></url>
+			<url><loc>source-Str.html</loc></url>
 			<url><loc>source-function.html</loc></url>
 </urlset>

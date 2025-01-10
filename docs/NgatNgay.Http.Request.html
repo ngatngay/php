@@ -22,9 +22,6 @@
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Database.html">Database</a>
 			</li>
-			<li class="menuGroup-item">
-				<a href="namespace-NgatNgay.Helper.html">Helper</a>
-			</li>
 			<li class="menuGroup-item active">
 				<a href="namespace-NgatNgay.Http.html">Http</a>
 			</li>
@@ -371,7 +368,7 @@
 			<a href="#_getBaseUrl">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="getUrl" id="_getUrl">
+	<tr class="expandable collapsed" data-order="getUri" id="_getUri">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -382,7 +379,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#118-122" title="Go to source code">getUrl</a>(<span><var>$mode</var> = <span class="php-str">'full'</span></span>)</code>
+				<code><a href="source-Http.Request.html#118-130" title="Go to source code">getUri</a>(<span>string <var>$mode</var> = <span class="php-str">'full'</span></span>)</code>
 
 
 
@@ -394,7 +391,7 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_getUrl">#</a>
+			<a href="#_getUri">#</a>
 		</td>
 	</tr>
 	<tr class="expandable collapsed" data-order="get" id="_get">
@@ -408,7 +405,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#124-127" title="Go to source code">get</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#132-135" title="Go to source code">get</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -434,7 +431,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#129-132" title="Go to source code">hasGet</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#137-140" title="Go to source code">hasGet</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -460,7 +457,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#134-137" title="Go to source code">post</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#142-145" title="Go to source code">post</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -486,7 +483,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#139-142" title="Go to source code">hasPost</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#147-150" title="Go to source code">hasPost</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -512,7 +509,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#144-147" title="Go to source code">header</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#152-155" title="Go to source code">header</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -538,7 +535,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#148-151" title="Go to source code">hasHeader</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#156-159" title="Go to source code">hasHeader</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -564,7 +561,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#153-156" title="Go to source code">cookie</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#161-164" title="Go to source code">cookie</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -590,7 +587,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#157-160" title="Go to source code">hasCookie</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#165-168" title="Go to source code">hasCookie</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -616,7 +613,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#162-174" title="Go to source code">sessionStart</a>(<span>string <var>$prefix</var> = <span class="php-str">'sess_'</span></span>, <span>int <var>$ttl</var> = <span class="php-num">86400</span></span>)</code>
+				<code><a href="source-Http.Request.html#170-182" title="Go to source code">sessionStart</a>(<span>string <var>$prefix</var> = <span class="php-str">'sess_'</span></span>, <span>int <var>$ttl</var> = <span class="php-num">86400</span></span>)</code>
 
 
 
@@ -642,7 +639,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#175-178" title="Go to source code">session</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#183-186" title="Go to source code">session</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -668,7 +665,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#179-182" title="Go to source code">hasSession</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#187-190" title="Go to source code">hasSession</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -694,7 +691,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#183-185" title="Go to source code">setSession</a>(<span><var>$key</var></span>, <span><var>$value</var></span>)</code>
+				<code><a href="source-Http.Request.html#191-193" title="Go to source code">setSession</a>(<span><var>$key</var></span>, <span><var>$value</var></span>)</code>
 
 
 
@@ -720,7 +717,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#186-188" title="Go to source code">removeSession</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#194-196" title="Go to source code">removeSession</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -746,7 +743,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#190-193" title="Go to source code">server</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#198-201" title="Go to source code">server</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -772,7 +769,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#194-197" title="Go to source code">hasServer</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#202-205" title="Go to source code">hasServer</a>(<span><var>$key</var></span>)</code>
 
 
 
@@ -798,7 +795,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#199-202" title="Go to source code">request</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Request.html#207-210" title="Go to source code">request</a>(<span><var>$key</var></span>, <span><var>$default</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -824,7 +821,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Request.html#203-206" title="Go to source code">hasRequest</a>(<span><var>$key</var></span>)</code>
+				<code><a href="source-Http.Request.html#211-214" title="Go to source code">hasRequest</a>(<span><var>$key</var></span>)</code>
 
 
 

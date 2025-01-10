@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Class NgatNgay\Helper\Str |  API</title>
+	<title>Class NgatNgay\Date |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -22,9 +22,6 @@
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Database.html">Database</a>
 			</li>
-			<li class="menuGroup-item active">
-				<a href="namespace-NgatNgay.Helper.html">Helper</a>
-			</li>
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Http.html">Http</a>
 			</li>
@@ -40,28 +37,68 @@
 			<h3>Classes</h3>
 			<ul>
 					<li>
-						<a href="NgatNgay.Helper.Arr.html">
+						<a href="NgatNgay.Arr.html">
 							Arr
 						</a>
 					</li>
 					<li>
-						<a href="NgatNgay.Helper.Cache.html">
+						<a href="NgatNgay.Cache.html">
 							Cache
 						</a>
 					</li>
 					<li>
-						<a href="NgatNgay.Helper.Date.html">
+						<a href="NgatNgay.Database.html">
+							Database
+						</a>
+					</li>
+					<li class="active">
+						<a href="NgatNgay.Date.html">
 							Date
 						</a>
 					</li>
 					<li>
-						<a href="NgatNgay.Helper.FS.html">
+						<a href="NgatNgay.FS.html">
 							FS
 						</a>
 					</li>
-					<li class="active">
-						<a href="NgatNgay.Helper.Str.html">
+					<li>
+						<a href="NgatNgay.Str.html">
 							Str
+						</a>
+					</li>
+			</ul>
+		</div>
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li>
+						<a href="NgatNgay.IResponse.html">
+							IResponse
+						</a>
+					</li>
+			</ul>
+		</div>
+		<div class="menu-section">
+			<h3>Functions</h3>
+			<ul>
+					<li>
+						<a href="function-NgatNgay.request.html">
+							request
+						</a>
+					</li>
+					<li>
+						<a href="function-NgatNgay.response.html">
+							response
+						</a>
+					</li>
+					<li>
+						<a href="function-NgatNgay.redirect.html">
+							redirect
+						</a>
+					</li>
+					<li>
+						<a href="function-NgatNgay.refresh.html">
+							refresh
 						</a>
 					</li>
 			</ul>
@@ -79,10 +116,10 @@
 				</li>
 				<li>
 					
-						<a href="namespace-NgatNgay.Helper.html">Namespace</a>
+						<a href="namespace-NgatNgay.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="NgatNgay.Helper.Str.html">Class</a></li>				<li>
+<li class="active"><a href="NgatNgay.Date.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -98,7 +135,7 @@
 
 		<div class="layout-content">
 		<h1>
-			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Helper.html">Helper</a>\<a href="NgatNgay.Helper.Str.html">Str</a>
+			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="NgatNgay.Date.html">Date</a>
 		</h1>
 
 
@@ -111,7 +148,7 @@
 
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-Helper.Str.html#7" title="Go to source code">Helper/Str.php</a><br>
+			<b>Located at</b> <a href="source-Date.html#5" title="Go to source code">Date.php</a><br>
 		</div>
 
 
@@ -121,7 +158,7 @@
 				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
 			</tr>
 
-	<tr class="expandable collapsed" data-order="empty" id="_empty">
+	<tr class="expandable collapsed" data-order="now" id="_now">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -132,7 +169,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#9-16" title="Go to source code">empty</a>(<span>string <var>$string</var></span>): bool</code>
+				<code><a href="source-Date.html#7-10" title="Go to source code">now</a>()</code>
 
 
 
@@ -144,10 +181,10 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_empty">#</a>
+			<a href="#_now">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="wordCut" id="_wordCut">
+	<tr class="expandable collapsed" data-order="startDay" id="_startDay">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -158,7 +195,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#18-27" title="Go to source code">wordCut</a>(<span>string <var>$string</var></span>, <span>int <var>$words</var> = <span class="php-num">35</span></span>, <span>string <var>$end</var> = <span class="php-str">'...'</span></span>): string</code>
+				<code><a href="source-Date.html#12-15" title="Go to source code">startDay</a>(<span><var>$day</var></span>)</code>
 
 
 
@@ -170,10 +207,10 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_wordCut">#</a>
+			<a href="#_startDay">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="nl2br" id="_nl2br">
+	<tr class="expandable collapsed" data-order="startMonth" id="_startMonth">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -184,7 +221,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#29-32" title="Go to source code">nl2br</a>(<span>string <var>$str</var></span>): string</code>
+				<code><a href="source-Date.html#17-20" title="Go to source code">startMonth</a>(<span><var>$month</var></span>)</code>
 
 
 
@@ -196,10 +233,10 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_nl2br">#</a>
+			<a href="#_startMonth">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="br2nl" id="_br2nl">
+	<tr class="expandable collapsed" data-order="startYear" id="_startYear">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -210,7 +247,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#34-37" title="Go to source code">br2nl</a>(<span>string <var>$str</var></span>): string</code>
+				<code><a href="source-Date.html#22-24" title="Go to source code">startYear</a>()</code>
 
 
 
@@ -222,10 +259,10 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_br2nl">#</a>
+			<a href="#_startYear">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="length" id="_length">
+	<tr class="expandable collapsed" data-order="currentDay" id="_currentDay">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -236,7 +273,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#39-42" title="Go to source code">length</a>(<span>string <var>$str</var></span>): int</code>
+				<code><a href="source-Date.html#27-30" title="Go to source code">currentDay</a>()</code>
 
 
 
@@ -248,10 +285,10 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_length">#</a>
+			<a href="#_currentDay">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="vn2en" id="_vn2en">
+	<tr class="expandable collapsed" data-order="currentMonth" id="_currentMonth">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -262,16 +299,11 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Helper.Str.html#44-69" title="Go to source code">vn2en</a>(<span>string <var>$str</var></span>): string</code>
+				<code><a href="source-Date.html#32-35" title="Go to source code">currentMonth</a>()</code>
 
 
-	<div class="expandable-collapsedView">
-		Chuyển đổi tiếng Việt sang tiếng Anh
-	</div>
 
 	<div class="expandable-expandedView">
-	<div class="description"><p>Chuyển đổi tiếng Việt sang tiếng Anh</p>
-</div>
 
 
 
@@ -279,7 +311,59 @@
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_vn2en">#</a>
+			<a href="#_currentMonth">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="currentYear" id="_currentYear">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					static
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Date.html#37-40" title="Go to source code">currentYear</a>()</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_currentYear">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="displayAgo" id="_displayAgo">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					static
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Date.html#42-64" title="Go to source code">displayAgo</a>(<span><var>$time</var></span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_displayAgo">#</a>
 		</td>
 	</tr>
 		</table>
