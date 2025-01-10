@@ -11,6 +11,7 @@ class Request
     public array $session;
     public array $server;
     public array $request;
+    public array $payload;
 
     public function __construct()
     {
@@ -37,6 +38,17 @@ class Request
         $this->post = &$_POST;
         $this->cookie = &$_COOKIE;
         $this->request = &$_REQUEST;
+        
+        // Đọc payload JSON từ request body
+$jsonPayload = file_get_contents('php://input');
+
+// Giải mã JSON thành mảng PHP
+$data = @json_decode($jsonPayload, true);
+
+// Kiểm tra và xử lý dữ liệu
+if (json_last_error() === JSON_ERROR_NONE) {
+    $this->payload = $data;
+}
     }
 
     private function initHeader()
@@ -211,5 +223,14 @@ public function getReferer()
     public function hasRequest($key)
     {
         return isset($this->request[$key]);
+    }
+    
+    public function payload($key, $default = null)
+    {
+        return $this->payload[$key] ?? $default;
+    }
+    public function hasPayload($key)
+    {
+        return isset($this->payload[$key]);
     }
 }
