@@ -1,6 +1,6 @@
 <?php
 
-namespace NgatNgay\Helper;
+namespace NgatNgay;
 
 use Symfony\Component\Cache\Adapter\ApcuAdapter;
 use Symfony\Component\Cache\Adapter\ChainAdapter;

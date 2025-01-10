@@ -1,6 +1,6 @@
 <?php
 
-namespace NgatNgay\Helper;
+namespace NgatNgay;
 
 class Date
 {

@@ -6,8 +6,10 @@ use PDO;
 
 class Database
 {
-    public function __construct(private $pdo)
+    private PDO $pdo;
+    public function __construct($pdo = null)
     {
+        $this->pdo = $pdo;
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [Statement::class]);
     }
@@ -15,14 +17,27 @@ class Database
     public function query(string $sql, $params = null)
     {
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($params);
+if (is_array($params)) {
+$i = 0;
+foreach ($params as $key => $value) {
+$i++;
+    if (is_string($key)) {
+$stmt->bindValue($key, $value);
+    } else {
+$stmt->bindValue($i, $value);
+}
+}
+}
+
+//dump($params);
+        $stmt->execute();
 
         return $stmt;
     }
 
     public function insert(string $table, array $params)
     {
-        echo $sql = 'insert into "' . $table . '"'
+        $sql = 'insert into "' . $table . '"'
             . ' (' . implode(',', $this->buildName(array_keys($params))) . ')'
             . ' values (' . implode(',', array_fill(0, count($params), '?')) . ')';
         //dump(array_values($params));

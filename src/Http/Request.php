@@ -115,10 +115,18 @@ public function getReferer()
             . ($this->server['server_name'] ?? 'localhost');
     }
 
-    public function getUrl($mode = 'full')
+    public function getUri(string $mode = 'full')
     {
-        $uri = $mode === 'no_query' ? strtok($this->server['request_uri'], '?') : $this->server['request_uri'];
-        return $this->getBaseUrl() . $uri;
+        $uri = $this->server['request_uri'];
+        
+        switch ($mode) {
+            case 'request':
+                return $uri;
+            case 'no_query':
+                return strtok($uri, '?');
+            default:
+                return $this->getBaseUrl() . $uri;
+        }   
     }
 
     public function get($key, $default = null)
