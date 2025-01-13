@@ -51,6 +51,11 @@
 							Request
 						</a>
 					</li>
+					<li>
+						<a href="NgatNgay.Http.Response.html">
+							Response
+						</a>
+					</li>
 			</ul>
 		</div>
 	</div>
@@ -96,7 +101,7 @@
 		<tr>
 			<th><code>extends</code></th>
 			<td>
-<code><span title="Symfony\Component\BrowserKit\HttpBrowser">HttpBrowser</span></code>			</td>
+<code><a href="Symfony.Component.BrowserKit.HttpBrowser.html"><span title="Symfony\Component\BrowserKit\HttpBrowser">HttpBrowser</span></a></code>			</td>
 		</tr>
 
 	</table>
@@ -104,7 +109,12 @@
 			<div class="classLikeSection">
 	<ul class="classTree">
 	<li>
-<span>Symfony\Component\BrowserKit\HttpBrowser</span>
+<a href="Symfony.Component.BrowserKit.AbstractBrowser.html"><span>Symfony\Component\BrowserKit\AbstractBrowser</span></a>
+
+
+	<ul class="classTree">
+	<li>
+<a href="Symfony.Component.BrowserKit.HttpBrowser.html"><span>Symfony\Component\BrowserKit\HttpBrowser</span></a>
 
 
 	<ul class="classTree">
@@ -112,6 +122,8 @@
 <b><span class="active">NgatNgay\Http\Browser</span></b>
 
 
+	</li>
+	</ul>
 	</li>
 	</ul>
 	</li>
@@ -140,15 +152,28 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Browser.html#11-14" title="Go to source code">__construct</a>(<span>?<span title="Symfony\Contracts\HttpClient\HttpClientInterface">HttpClientInterface</span> <var>$client</var> = <span class="php-kw">null</span></span>, <span>?<span title="Symfony\Component\BrowserKit\History">History</span> <var>$history</var> = <span class="php-kw">null</span></span>, <span>?<span title="Symfony\Component\BrowserKit\CookieJar">CookieJar</span> <var>$cookieJar</var> = <span class="php-kw">null</span></span>)</code>
+				<code><a href="source-Http.Browser.html#12-15" title="Go to source code">__construct</a>(<span>?<a href="Symfony.Contracts.HttpClient.HttpClientInterface.html"><span title="Symfony\Contracts\HttpClient\HttpClientInterface">HttpClientInterface</span></a> <var>$client</var> = <span class="php-kw">null</span></span>, <span>?<a href="Symfony.Component.BrowserKit.History.html"><span title="Symfony\Component\BrowserKit\History">History</span></a> <var>$history</var> = <span class="php-kw">null</span></span>, <span>?<a href="Symfony.Component.BrowserKit.CookieJar.html"><span title="Symfony\Component\BrowserKit\CookieJar">CookieJar</span></a> <var>$cookieJar</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
 	<div class="expandable-expandedView">
 
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$client</var>&nbsp;&nbsp;</td>
+										<td><p>The server parameters (equivalent of $_SERVER)</p>
+</td>
+									</tr>
+							</table>
 
 
 
+		<h4>Overrides</h4>
+		<ul>
+				<li>
+<a href="Symfony.Component.BrowserKit.HttpBrowser.html#___construct">						<code>Symfony\Component\BrowserKit\HttpBrowser::__construct()</code></a>				</li>
+		</ul>
 	</div>
 			</td>
 		<td class="table-anchor">
@@ -166,7 +191,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-Http.Browser.html#16-18" title="Go to source code">setUserAgent</a>(<span>string <var>$userAgent</var></span>)</code>
+				<code><a href="source-Http.Browser.html#17-19" title="Go to source code">setUserAgent</a>(<span>string <var>$userAgent</var></span>)</code>
 
 
 
@@ -182,10 +207,54 @@
 		</td>
 	</tr>
 		</table>
+		<table class="table">
+			<tr>
+				<th class="table-heading">Methods inherited from <a href="Symfony.Component.BrowserKit.HttpBrowser.html"><span>Symfony\Component\BrowserKit\HttpBrowser</span></a></th>
+			</tr>
+			<tr>
+				<td class="table-cell">
+<code><a href="Symfony.Component.BrowserKit.HttpBrowser.html#_doRequest">doRequest()</a>, <a href="Symfony.Component.BrowserKit.HttpBrowser.html#_getHeaders">getHeaders()</a></code>				</td>
+			</tr>
+		</table>
+
+		<table class="table">
+			<tr>
+				<th class="table-heading">Methods inherited from <a href="Symfony.Component.BrowserKit.AbstractBrowser.html"><span>Symfony\Component\BrowserKit\AbstractBrowser</span></a></th>
+			</tr>
+			<tr>
+				<td class="table-cell">
+<code><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_followRedirects">followRedirects()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_followMetaRefresh">followMetaRefresh()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_isFollowingRedirects">isFollowingRedirects()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_setMaxRedirects">setMaxRedirects()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getMaxRedirects">getMaxRedirects()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_insulate">insulate()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_setServerParameters">setServerParameters()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_setServerParameter">setServerParameter()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getServerParameter">getServerParameter()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_xmlHttpRequest">xmlHttpRequest()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_jsonRequest">jsonRequest()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getHistory">getHistory()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getCookieJar">getCookieJar()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getCrawler">getCrawler()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getInternalResponse">getInternalResponse()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getResponse">getResponse()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getInternalRequest">getInternalRequest()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getRequest">getRequest()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_click">click()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_clickLink">clickLink()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_submit">submit()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_submitForm">submitForm()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_request">request()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_doRequestInProcess">doRequestInProcess()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getScript">getScript()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_filterRequest">filterRequest()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_filterResponse">filterResponse()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_createCrawlerFromContent">createCrawlerFromContent()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_back">back()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_forward">forward()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_reload">reload()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_followRedirect">followRedirect()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_restart">restart()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_getAbsoluteUri">getAbsoluteUri()</a>, <a href="Symfony.Component.BrowserKit.AbstractBrowser.html#_requestFromRequest">requestFromRequest()</a></code>				</td>
+			</tr>
+		</table>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<table class="table">
+			<tr>
+				<th class="table-heading">Properties inherited from <a href="Symfony.Component.BrowserKit.AbstractBrowser.html"><span>Symfony\Component\BrowserKit\AbstractBrowser</span></a></th>
+			</tr>
+			<tr>
+				<td class="table-cell">
+<code><var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$history">$history</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$cookieJar">$cookieJar</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$server">$server</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$internalRequest">$internalRequest</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$request">$request</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$internalResponse">$internalResponse</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$response">$response</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$crawler">$crawler</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$insulated">$insulated</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$redirect">$redirect</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$followRedirects">$followRedirects</a></var>, <var><a href="Symfony.Component.BrowserKit.AbstractBrowser.html#$followMetaRefresh">$followMetaRefresh</a></var></code>				</td>
+			</tr>
+		</table>
 
 
 

@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex">
+	<title>Interface Symfony\Contracts\HttpClient\HttpClientInterface |  API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.html">NgatNgay</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Database.html">Database</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Http.html">Http</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Session.html">Session</a>
+			</li>
+	</ul>
+			</li>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.html">Symfony</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Contracts.html">Contracts</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Contracts.HttpClient.html">HttpClient</a>
+	<ul>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.ChunkInterface.html">
+							ChunkInterface
+						</a>
+					</li>
+					<li class="active">
+						<a href="Symfony.Contracts.HttpClient.HttpClientInterface.html">
+							HttpClientInterface
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.ResponseInterface.html">
+							ResponseInterface
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.ResponseStreamInterface.html">
+							ResponseStreamInterface
+						</a>
+					</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Symfony.Contracts.HttpClient.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Symfony.Contracts.HttpClient.HttpClientInterface.html">Interface</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Interface <a href="namespace-Symfony.html">Symfony</a>\<a href="namespace-Symfony.Contracts.html">Contracts</a>\<a href="namespace-Symfony.Contracts.HttpClient.html">HttpClient</a>\<a href="Symfony.Contracts.HttpClient.HttpClientInterface.html">HttpClientInterface</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+
+	</table>
+		<div class="classLikeDescription">
+	<div class="description"><p>Provides flexible methods for requesting HTTP resources synchronously or asynchronously.</p>
+</div>
+		</div>
+
+
+		<div class="classLikeSection">
+
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="request" id="_request">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>request(<span>string <var>$method</var></span>, <span>string <var>$url</var></span>, <span>array <var>$options</var> = []</span>): <a href="Symfony.Contracts.HttpClient.ResponseInterface.html"><span title="Symfony\Contracts\HttpClient\ResponseInterface">ResponseInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Requests an HTTP resource.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Requests an HTTP resource.</p>
+<p>Responses MUST be lazy, but their status code MUST be
+checked even if none of their public methods are called.</p>
+<p>Implementations are not required to support all options described above; they can also
+support more custom options; but in any case, they MUST throw a TransportExceptionInterface
+when an unsupported option is passed.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.TransportExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>When an unsupported option is passed</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_request">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="stream" id="_stream">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>stream(
+	<span><a href="Symfony.Contracts.HttpClient.ResponseInterface.html"><span title="Symfony\Contracts\HttpClient\ResponseInterface">ResponseInterface</span></a>|iterable&lt;array-key, <a href="Symfony.Contracts.HttpClient.ResponseInterface.html"><span title="Symfony\Contracts\HttpClient\ResponseInterface">ResponseInterface</span></a>&gt; <var>$responses</var></span>,
+	<span>float|null <var>$timeout</var> = <span class="php-kw">null</span></span>,
+): <a href="Symfony.Contracts.HttpClient.ResponseStreamInterface.html"><span title="Symfony\Contracts\HttpClient\ResponseStreamInterface">ResponseStreamInterface</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Yields responses chunk by chunk as they complete.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Yields responses chunk by chunk as they complete.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$responses</var>&nbsp;&nbsp;</td>
+										<td><p>One or more responses created by the current HTTP client</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$timeout</var>&nbsp;&nbsp;</td>
+										<td><p>The idle timeout before yielding timeout chunks</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_stream">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="withOptions" id="_withOptions">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>withOptions(<span>array <var>$options</var></span>): static</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns a new instance of the client with new default options
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns a new instance of the client with new default options</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_withOptions">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+		<table class="table" id="constants">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Constants</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="OPTIONS_DEFAULTS" id="OPTIONS_DEFAULTS">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+				</code>
+			</td>
+
+			<td class="table-cell">
+<code>OPTIONS_DEFAULTS = [
+	<span class="php-str">'auth_basic'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'auth_bearer'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'query'</span> =&gt; [],
+	<span class="php-str">'headers'</span> =&gt; [],
+	<span class="php-str">'body'</span> =&gt; <span class="php-str">''</span>,
+	<span class="php-str">'json'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'user_data'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'max_redirects'</span> =&gt; <span class="php-num">20</span>,
+	<span class="php-str">'http_version'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'base_uri'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'buffer'</span> =&gt; <span class="php-kw">true</span>,
+	<span class="php-str">'on_progress'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'resolve'</span> =&gt; [],
+	<span class="php-str">'proxy'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'no_proxy'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'timeout'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'max_duration'</span> =&gt; <span class="php-num">0</span>,
+	<span class="php-str">'bindto'</span> =&gt; <span class="php-str">'0'</span>,
+	<span class="php-str">'verify_peer'</span> =&gt; <span class="php-kw">true</span>,
+	<span class="php-str">'verify_host'</span> =&gt; <span class="php-kw">true</span>,
+	<span class="php-str">'cafile'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'capath'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'local_cert'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'local_pk'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'passphrase'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'ciphers'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'peer_fingerprint'</span> =&gt; <span class="php-kw">null</span>,
+	<span class="php-str">'capture_peer_cert_chain'</span> =&gt; <span class="php-kw">false</span>,
+	<span class="php-str">'extra'</span> =&gt; [],
+]</code>
+
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#OPTIONS_DEFAULTS">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+		</div>
+
+		<div class="layout-footer">
+			 API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.6</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>

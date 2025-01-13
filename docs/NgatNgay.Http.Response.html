@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Interface NgatNgay\IResponse |  API</title>
+	<title>Class NgatNgay\Http\Response |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -22,7 +22,7 @@
 			<li class="menuGroup-item">
 				<a href="namespace-NgatNgay.Database.html">Database</a>
 			</li>
-			<li class="menuGroup-item">
+			<li class="menuGroup-item active">
 				<a href="namespace-NgatNgay.Http.html">Http</a>
 			</li>
 			<li class="menuGroup-item">
@@ -37,68 +37,23 @@
 			<h3>Classes</h3>
 			<ul>
 					<li>
-						<a href="NgatNgay.Arr.html">
-							Arr
+						<a href="NgatNgay.Http.Browser.html">
+							Browser
 						</a>
 					</li>
 					<li>
-						<a href="NgatNgay.Cache.html">
-							Cache
+						<a href="NgatNgay.Http.Curl.html">
+							Curl
 						</a>
 					</li>
 					<li>
-						<a href="NgatNgay.Database.html">
-							Database
+						<a href="NgatNgay.Http.Request.html">
+							Request
 						</a>
 					</li>
-					<li>
-						<a href="NgatNgay.Date.html">
-							Date
-						</a>
-					</li>
-					<li>
-						<a href="NgatNgay.FS.html">
-							FS
-						</a>
-					</li>
-					<li>
-						<a href="NgatNgay.Str.html">
-							Str
-						</a>
-					</li>
-			</ul>
-		</div>
-		<div class="menu-section">
-			<h3>Interfaces</h3>
-			<ul>
 					<li class="active">
-						<a href="NgatNgay.IResponse.html">
-							IResponse
-						</a>
-					</li>
-			</ul>
-		</div>
-		<div class="menu-section">
-			<h3>Functions</h3>
-			<ul>
-					<li>
-						<a href="function-NgatNgay.request.html">
-							request
-						</a>
-					</li>
-					<li>
-						<a href="function-NgatNgay.response.html">
-							response
-						</a>
-					</li>
-					<li>
-						<a href="function-NgatNgay.redirect.html">
-							redirect
-						</a>
-					</li>
-					<li>
-						<a href="function-NgatNgay.refresh.html">
-							refresh
+						<a href="NgatNgay.Http.Response.html">
+							Response
 						</a>
 					</li>
 			</ul>
@@ -116,10 +71,10 @@
 				</li>
 				<li>
 					
-						<a href="namespace-NgatNgay.html">Namespace</a>
+						<a href="namespace-NgatNgay.Http.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="NgatNgay.IResponse.html">Interface</a></li>				<li>
+<li class="active"><a href="NgatNgay.Http.Response.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -135,17 +90,20 @@
 
 		<div class="layout-content">
 		<h1>
-			Interface <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="NgatNgay.IResponse.html">IResponse</a>
+			Class <a href="namespace-NgatNgay.html">NgatNgay</a>\<a href="namespace-NgatNgay.Http.html">Http</a>\<a href="NgatNgay.Http.Response.html">Response</a>
 		</h1>
 
 
 	<table class="classLikeSignatureTable">
 
+
+
+
 	</table>
 
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-function.html#18" title="Go to source code">function.php</a><br>
+			<b>Located at</b> <a href="source-Http.Response.html#5" title="Go to source code">Http/Response.php</a><br>
 		</div>
 
 
@@ -155,6 +113,32 @@
 				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
 			</tr>
 
+	<tr class="expandable collapsed" data-order="__construct" id="___construct">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Http.Response.html#10-18" title="Go to source code">__construct</a>(<span><var>$data</var></span>, <span><var>$status</var></span>, <span><var>$headers</var> = []</span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#___construct">#</a>
+		</td>
+	</tr>
 	<tr class="expandable collapsed" data-order="data" id="_data">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
@@ -166,7 +150,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-function.html#20" title="Go to source code">data</a>(<span><var>$data</var></span>)</code>
+				<code><a href="source-Http.Response.html#20-24" title="Go to source code">data</a>(<span><var>$data</var></span>)</code>
 
 
 
@@ -192,7 +176,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-function.html#21" title="Go to source code">status</a>(<span><var>$status</var></span>)</code>
+				<code><a href="source-Http.Response.html#25-29" title="Go to source code">status</a>(<span><var>$status</var></span>)</code>
 
 
 
@@ -207,32 +191,6 @@
 			<a href="#_status">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="headers" id="_headers">
-			<td class="table-cell table-shrink">
-				<code class="nowrap">
-					
-	public
-					
-					
-				</code>
-			</td>
-
-			<td class="table-cell">
-				<code><a href="source-function.html#22" title="Go to source code">headers</a>(<span><var>$headers</var></span>)</code>
-
-
-
-	<div class="expandable-expandedView">
-
-
-
-
-	</div>
-			</td>
-		<td class="table-anchor">
-			<a href="#_headers">#</a>
-		</td>
-	</tr>
 	<tr class="expandable collapsed" data-order="json" id="_json">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
@@ -244,7 +202,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-function.html#23" title="Go to source code">json</a>()</code>
+				<code><a href="source-Http.Response.html#30-38" title="Go to source code">json</a>()</code>
 
 
 
@@ -259,6 +217,32 @@
 			<a href="#_json">#</a>
 		</td>
 	</tr>
+	<tr class="expandable collapsed" data-order="headers" id="_headers">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-Http.Response.html#40-44" title="Go to source code">headers</a>(<span><var>$headers</var></span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_headers">#</a>
+		</td>
+	</tr>
 	<tr class="expandable collapsed" data-order="send" id="_send">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
@@ -270,7 +254,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-function.html#24" title="Go to source code">send</a>()</code>
+				<code><a href="source-Http.Response.html#46-60" title="Go to source code">send</a>()</code>
 
 
 
@@ -286,6 +270,10 @@
 		</td>
 	</tr>
 		</table>
+
+
+
+
 
 
 

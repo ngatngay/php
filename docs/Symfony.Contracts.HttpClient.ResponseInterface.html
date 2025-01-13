@@ -1,0 +1,467 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex">
+	<title>Interface Symfony\Contracts\HttpClient\ResponseInterface |  API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.html">NgatNgay</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Database.html">Database</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Http.html">Http</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Session.html">Session</a>
+			</li>
+	</ul>
+			</li>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.html">Symfony</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Contracts.html">Contracts</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Contracts.HttpClient.html">HttpClient</a>
+	<ul>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Interfaces</h3>
+			<ul>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.ChunkInterface.html">
+							ChunkInterface
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.HttpClientInterface.html">
+							HttpClientInterface
+						</a>
+					</li>
+					<li class="active">
+						<a href="Symfony.Contracts.HttpClient.ResponseInterface.html">
+							ResponseInterface
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Contracts.HttpClient.ResponseStreamInterface.html">
+							ResponseStreamInterface
+						</a>
+					</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Symfony.Contracts.HttpClient.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Symfony.Contracts.HttpClient.ResponseInterface.html">Interface</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Interface <a href="namespace-Symfony.html">Symfony</a>\<a href="namespace-Symfony.Contracts.html">Contracts</a>\<a href="namespace-Symfony.Contracts.HttpClient.html">HttpClient</a>\<a href="Symfony.Contracts.HttpClient.ResponseInterface.html">ResponseInterface</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+
+	</table>
+		<div class="classLikeDescription">
+	<div class="description"><p>A (lazily retrieved) HTTP response.</p>
+</div>
+		</div>
+
+
+		<div class="classLikeSection">
+
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="getStatusCode" id="_getStatusCode">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getStatusCode(): int</code>
+
+
+	<div class="expandable-collapsedView">
+		Gets the HTTP status code of the response.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Gets the HTTP status code of the response.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.TransportExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>when a network error occurs</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getStatusCode">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getHeaders" id="_getHeaders">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getHeaders(<span>bool <var>$throw</var> = <span class="php-kw">true</span></span>): string[][]</code>
+
+
+	<div class="expandable-collapsedView">
+		Gets the HTTP headers of the response.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Gets the HTTP headers of the response.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$throw</var>&nbsp;&nbsp;</td>
+										<td><p>Whether an exception should be thrown on 3/4/5xx status codes</p>
+</td>
+									</tr>
+							</table>
+
+							<h4>Returns</h4>
+							<div><p>The headers of the response keyed by header names in lowercase</p>
+</div>
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.TransportExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>When a network error occurs</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.RedirectionExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 3xx when $throw is true and the &quot;max_redirects&quot; option has been reached</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ClientExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 4xx when $throw is true</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ServerExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 5xx when $throw is true</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getHeaders">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getContent" id="_getContent">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getContent(<span>bool <var>$throw</var> = <span class="php-kw">true</span></span>): string</code>
+
+
+	<div class="expandable-collapsedView">
+		Gets the response body as a string.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Gets the response body as a string.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$throw</var>&nbsp;&nbsp;</td>
+										<td><p>Whether an exception should be thrown on 3/4/5xx status codes</p>
+</td>
+									</tr>
+							</table>
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.TransportExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>When a network error occurs</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.RedirectionExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 3xx when $throw is true and the &quot;max_redirects&quot; option has been reached</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ClientExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 4xx when $throw is true</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ServerExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 5xx when $throw is true</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getContent">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="toArray" id="_toArray">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>toArray(<span>bool <var>$throw</var> = <span class="php-kw">true</span></span>): array</code>
+
+
+	<div class="expandable-collapsedView">
+		Gets the response body decoded as array, typically from a JSON payload.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Gets the response body decoded as array, typically from a JSON payload.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$throw</var>&nbsp;&nbsp;</td>
+										<td><p>Whether an exception should be thrown on 3/4/5xx status codes</p>
+</td>
+									</tr>
+							</table>
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.DecodingExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>When the body cannot be decoded to an array</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.TransportExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>When a network error occurs</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.RedirectionExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 3xx when $throw is true and the &quot;max_redirects&quot; option has been reached</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ClientExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 4xx when $throw is true</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Symfony.Contracts.HttpClient.Exception.ServerExceptionInterface.html"><span>Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface</span></a></code>&nbsp;</td>
+										<td><p>On a 5xx when $throw is true</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_toArray">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="cancel" id="_cancel">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>cancel(): void</code>
+
+
+	<div class="expandable-collapsedView">
+		Closes the response stream and all related buffers.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Closes the response stream and all related buffers.</p>
+<p>No further chunk will be yielded after this method has been called.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_cancel">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getInfo" id="_getInfo">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getInfo(<span>?string <var>$type</var> = <span class="php-kw">null</span></span>): mixed</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns info coming from the transport layer.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns info coming from the transport layer.</p>
+<p>This method SHOULD NOT throw any ExceptionInterface and SHOULD be non-blocking.
+The returned info is &quot;live&quot;: it can be empty and can change from one call to
+another, as the request/response progresses.</p>
+<p>The following info MUST be returned:</p>
+<ul>
+<li>canceled (bool) - true if the response was canceled using ResponseInterface::cancel(), false otherwise</li>
+<li>error (string|null) - the error message when the transfer was aborted, null otherwise</li>
+<li>http_code (int) - the last response code or 0 when it is not known yet</li>
+<li>http_method (string) - the HTTP verb of the last request</li>
+<li>redirect_count (int) - the number of redirects followed while executing the request</li>
+<li>redirect_url (string|null) - the resolved location of redirect responses, null otherwise</li>
+<li>response_headers (array) - an array modelled after the special $http_response_header variable</li>
+<li>start_time (float) - the time when the request was sent or 0.0 when it's pending</li>
+<li>url (string) - the last effective URL of the request</li>
+<li>user_data (mixed) - the value of the &quot;user_data&quot; request option, null if not set</li>
+</ul>
+<p>When the &quot;capture_peer_cert_chain&quot; option is true, the &quot;peer_certificate_chain&quot;
+attribute SHOULD list the peer certificates as an array of OpenSSL X.509 resources.</p>
+<p>Other info SHOULD be named after curl_getinfo()'s associative return value.</p>
+</div>
+
+
+							<h4>Returns</h4>
+							<div><p>An array of all available info, or one of them when $type is
+provided, or null when an unsupported type is requested</p>
+</div>
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getInfo">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+
+		</div>
+
+		<div class="layout-footer">
+			 API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.6</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>

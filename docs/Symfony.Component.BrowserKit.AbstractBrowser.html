@@ -1,0 +1,1811 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex">
+	<title>Class Symfony\Component\BrowserKit\AbstractBrowser |  API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.html">NgatNgay</a>
+	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Database.html">Database</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Http.html">Http</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-NgatNgay.Session.html">Session</a>
+			</li>
+	</ul>
+			</li>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.html">Symfony</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Component.html">Component</a>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-Symfony.Component.BrowserKit.html">BrowserKit</a>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Classes</h3>
+			<ul>
+					<li class="active">
+						<a href="Symfony.Component.BrowserKit.AbstractBrowser.html">
+							AbstractBrowser
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.Cookie.html">
+							Cookie
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.CookieJar.html">
+							CookieJar
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.History.html">
+							History
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.HttpBrowser.html">
+							HttpBrowser
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.Request.html">
+							Request
+						</a>
+					</li>
+					<li>
+						<a href="Symfony.Component.BrowserKit.Response.html">
+							Response
+						</a>
+					</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-Symfony.Component.BrowserKit.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="Symfony.Component.BrowserKit.AbstractBrowser.html">Class</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Class <a href="namespace-Symfony.html">Symfony</a>\<a href="namespace-Symfony.Component.html">Component</a>\<a href="namespace-Symfony.Component.BrowserKit.html">BrowserKit</a>\<a href="Symfony.Component.BrowserKit.AbstractBrowser.html">AbstractBrowser</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+			<tr><th><code>abstract</code></th></tr>
+
+
+
+	</table>
+		<div class="classLikeDescription">
+	<div class="description"><p>Simulates a browser.</p>
+<p>To make the actual request, you need to implement the doRequest() method.</p>
+<p>If you want to be able to run requests in their own process (insulated flag),
+you need to also implement the getScript() method.</p>
+</div>
+		</div>
+
+			<div class="classLikeSection">
+	<ul class="classTree">
+	<li>
+<b><span class="active">Symfony\Component\BrowserKit\AbstractBrowser</span></b>
+
+
+	<ul class="classTree">
+	<li>
+<a href="Symfony.Component.BrowserKit.HttpBrowser.html"><span>Symfony\Component\BrowserKit\HttpBrowser</span></a>
+
+
+	<ul class="classTree">
+	<li>
+<a href="NgatNgay.Http.Browser.html"><span>NgatNgay\Http\Browser</span></a>
+
+
+	</li>
+	</ul>
+	</li>
+	</ul>
+	</li>
+	</ul>
+			</div>
+
+		<div class="classLikeSection">
+
+		</div>
+
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="__construct" id="___construct">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>__construct(<span>array <var>$server</var> = []</span>, <span>?<a href="Symfony.Component.BrowserKit.History.html"><span title="Symfony\Component\BrowserKit\History">History</span></a> <var>$history</var> = <span class="php-kw">null</span></span>, <span>?<a href="Symfony.Component.BrowserKit.CookieJar.html"><span title="Symfony\Component\BrowserKit\CookieJar">CookieJar</span></a> <var>$cookieJar</var> = <span class="php-kw">null</span></span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$server</var>&nbsp;&nbsp;</td>
+										<td><p>The server parameters (equivalent of $_SERVER)</p>
+</td>
+									</tr>
+							</table>
+
+
+
+		<h4>Overriden by</h4>
+		<ul>
+				<li>
+<a href="Symfony.Component.BrowserKit.HttpBrowser.html#___construct">						<code>Symfony\Component\BrowserKit\HttpBrowser::__construct()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#___construct">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="followRedirects" id="_followRedirects">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>followRedirects(<span>bool <var>$followRedirects</var> = <span class="php-kw">true</span></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets whether to automatically follow redirects or not.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets whether to automatically follow redirects or not.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_followRedirects">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="followMetaRefresh" id="_followMetaRefresh">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>followMetaRefresh(<span>bool <var>$followMetaRefresh</var> = <span class="php-kw">true</span></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets whether to automatically follow meta refresh redirects or not.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets whether to automatically follow meta refresh redirects or not.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_followMetaRefresh">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="isFollowingRedirects" id="_isFollowingRedirects">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>isFollowingRedirects(): bool</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns whether client automatically follows redirects or not.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns whether client automatically follows redirects or not.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_isFollowingRedirects">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="setMaxRedirects" id="_setMaxRedirects">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>setMaxRedirects(<span>int <var>$maxRedirects</var></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets the maximum number of redirects that crawler can follow.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets the maximum number of redirects that crawler can follow.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_setMaxRedirects">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getMaxRedirects" id="_getMaxRedirects">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getMaxRedirects(): int</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the maximum number of redirects that crawler can follow.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the maximum number of redirects that crawler can follow.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getMaxRedirects">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="insulate" id="_insulate">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>insulate(<span>bool <var>$insulated</var> = <span class="php-kw">true</span></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets the insulated flag.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets the insulated flag.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="RuntimeException.html"><span>RuntimeException</span></a></code>&nbsp;</td>
+										<td><p>When Symfony Process Component is not installed</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_insulate">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="setServerParameters" id="_setServerParameters">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>setServerParameters(<span>array <var>$server</var></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets server parameters.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets server parameters.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_setServerParameters">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="setServerParameter" id="_setServerParameter">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>setServerParameter(<span>string <var>$key</var></span>, <span>string <var>$value</var></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Sets single server parameter.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Sets single server parameter.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_setServerParameter">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getServerParameter" id="_getServerParameter">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getServerParameter(<span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-str">''</span></span>): mixed</code>
+
+
+	<div class="expandable-collapsedView">
+		Gets single server parameter for specified key.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Gets single server parameter for specified key.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$default</var>&nbsp;&nbsp;</td>
+										<td><p>A default value when key is undefined</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getServerParameter">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="xmlHttpRequest" id="_xmlHttpRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>xmlHttpRequest(
+	<span>string <var>$method</var></span>,
+	<span>string <var>$uri</var></span>,
+	<span>array <var>$parameters</var> = []</span>,
+	<span>array <var>$files</var> = []</span>,
+	<span>array <var>$server</var> = []</span>,
+	<span>?string <var>$content</var> = <span class="php-kw">null</span></span>,
+	<span>bool <var>$changeHistory</var> = <span class="php-kw">true</span></span>,
+): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_xmlHttpRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="jsonRequest" id="_jsonRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>jsonRequest(
+	<span>string <var>$method</var></span>,
+	<span>string <var>$uri</var></span>,
+	<span>array <var>$parameters</var> = []</span>,
+	<span>array <var>$server</var> = []</span>,
+	<span>bool <var>$changeHistory</var> = <span class="php-kw">true</span></span>,
+): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Converts the request parameters into a JSON string and uses it as request content.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Converts the request parameters into a JSON string and uses it as request content.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_jsonRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getHistory" id="_getHistory">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getHistory(): <a href="Symfony.Component.BrowserKit.History.html"><span title="Symfony\Component\BrowserKit\History">History</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the History instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the History instance.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getHistory">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getCookieJar" id="_getCookieJar">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getCookieJar(): <a href="Symfony.Component.BrowserKit.CookieJar.html"><span title="Symfony\Component\BrowserKit\CookieJar">CookieJar</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the CookieJar instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the CookieJar instance.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getCookieJar">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getCrawler" id="_getCrawler">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getCrawler(): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the current Crawler instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the current Crawler instance.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getCrawler">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getInternalResponse" id="_getInternalResponse">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getInternalResponse(): <a href="Symfony.Component.BrowserKit.Response.html"><span title="Symfony\Component\BrowserKit\Response">Response</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the current BrowserKit Response instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the current BrowserKit Response instance.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getInternalResponse">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getResponse" id="_getResponse">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getResponse(): object</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the current origin response instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the current origin response instance.</p>
+<p>The origin response is the response instance that is returned
+by the code that handles requests.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getResponse">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getInternalRequest" id="_getInternalRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getInternalRequest(): <a href="Symfony.Component.BrowserKit.Request.html"><span title="Symfony\Component\BrowserKit\Request">Request</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the current BrowserKit Request instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the current BrowserKit Request instance.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getInternalRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getRequest" id="_getRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getRequest(): object</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the current origin Request instance.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the current origin Request instance.</p>
+<p>The origin request is the request instance that is sent
+to the code that handles requests.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="click" id="_click">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>click(<span><a href="Symfony.Component.DomCrawler.Link.html"><span title="Symfony\Component\DomCrawler\Link">Link</span></a> <var>$link</var></span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Clicks on a given link.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Clicks on a given link.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_click">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="clickLink" id="_clickLink">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>clickLink(<span>string <var>$linkText</var></span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Clicks the first link (or clickable image) that contains the given text.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Clicks the first link (or clickable image) that contains the given text.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$linkText</var>&nbsp;&nbsp;</td>
+										<td><p>The text of the link or the alt attribute of the clickable image</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_clickLink">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="submit" id="_submit">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>submit(<span><a href="Symfony.Component.DomCrawler.Form.html"><span title="Symfony\Component\DomCrawler\Form">Form</span></a> <var>$form</var></span>, <span>array <var>$values</var> = []</span>, <span>array <var>$serverParameters</var> = []</span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Submits a form.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Submits a form.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$values</var>&nbsp;&nbsp;</td>
+										<td><p>An array of form field values</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$serverParameters</var>&nbsp;&nbsp;</td>
+										<td><p>An array of server parameters</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_submit">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="submitForm" id="_submitForm">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>submitForm(<span>string <var>$button</var></span>, <span>array <var>$fieldValues</var> = []</span>, <span>string <var>$method</var> = <span class="php-str">'POST'</span></span>, <span>array <var>$serverParameters</var> = []</span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Finds the first form that contains a button with the given content and
+uses it to submit the given form field values.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Finds the first form that contains a button with the given content and
+uses it to submit the given form field values.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$button</var>&nbsp;&nbsp;</td>
+										<td><p>The text content, id, value or name of the form <button> or <input type="submit"></p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$fieldValues</var>&nbsp;&nbsp;</td>
+										<td><p>Use this syntax: ['my_form[name]' =&gt; '...', 'my_form[email]' =&gt; '...']</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$method</var>&nbsp;&nbsp;</td>
+										<td><p>The HTTP method used to submit the form</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$serverParameters</var>&nbsp;&nbsp;</td>
+										<td><p>These values override the ones stored in $<em>SERVER (HTTP headers must include an HTTP</em> prefix as PHP does)</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_submitForm">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="request" id="_request">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>request(
+	<span>string <var>$method</var></span>,
+	<span>string <var>$uri</var></span>,
+	<span>array <var>$parameters</var> = []</span>,
+	<span>array <var>$files</var> = []</span>,
+	<span>array <var>$server</var> = []</span>,
+	<span>string <var>$content</var> = <span class="php-kw">null</span></span>,
+	<span>bool <var>$changeHistory</var> = <span class="php-kw">true</span></span>,
+): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Calls a URI.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Calls a URI.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$method</var>&nbsp;&nbsp;</td>
+										<td><p>The request method</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$uri</var>&nbsp;&nbsp;</td>
+										<td><p>The URI to fetch</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$parameters</var>&nbsp;&nbsp;</td>
+										<td><p>The Request parameters</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$files</var>&nbsp;&nbsp;</td>
+										<td><p>The files</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$server</var>&nbsp;&nbsp;</td>
+										<td><p>The server parameters (HTTP headers are referenced with an HTTP_ prefix as PHP does)</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$content</var>&nbsp;&nbsp;</td>
+										<td><p>The raw body data</p>
+</td>
+									</tr>
+									<tr>
+										<td><var>$changeHistory</var>&nbsp;&nbsp;</td>
+										<td><p>Whether to update the history or not (only used internally for back(), forward(), and reload())</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_request">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="doRequestInProcess" id="_doRequestInProcess">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>doRequestInProcess(<span>object <var>$request</var></span>): object</code>
+
+
+	<div class="expandable-collapsedView">
+		Makes a request in another process.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Makes a request in another process.</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="RuntimeException.html"><span>RuntimeException</span></a></code>&nbsp;</td>
+										<td><p>When processing returns exit code</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_doRequestInProcess">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="doRequest" id="_doRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					abstract
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>doRequest(<span>object <var>$request</var></span>): object</code>
+
+
+	<div class="expandable-collapsedView">
+		Makes a request.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Makes a request.</p>
+</div>
+
+
+
+
+		<h4>Implemented by</h4>
+		<ul>
+				<li>
+<a href="Symfony.Component.BrowserKit.HttpBrowser.html#_doRequest">						<code>Symfony\Component\BrowserKit\HttpBrowser::doRequest()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_doRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getScript" id="_getScript">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getScript(<span>object <var>$request</var></span>)</code>
+
+
+	<div class="expandable-collapsedView">
+		Returns the script to execute when the request must be insulated.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Returns the script to execute when the request must be insulated.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$request</var>&nbsp;&nbsp;</td>
+										<td><p>An origin request instance</p>
+</td>
+									</tr>
+							</table>
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="LogicException.html"><span>LogicException</span></a></code>&nbsp;</td>
+										<td><p>When this abstract class is not implemented</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getScript">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="filterRequest" id="_filterRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>filterRequest(<span><a href="Symfony.Component.BrowserKit.Request.html"><span title="Symfony\Component\BrowserKit\Request">Request</span></a> <var>$request</var></span>): object</code>
+
+
+	<div class="expandable-collapsedView">
+		Filters the BrowserKit request to the origin one.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Filters the BrowserKit request to the origin one.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_filterRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="filterResponse" id="_filterResponse">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>filterResponse(<span>object <var>$response</var></span>): <a href="Symfony.Component.BrowserKit.Response.html"><span title="Symfony\Component\BrowserKit\Response">Response</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Filters the origin response to the BrowserKit one.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Filters the origin response to the BrowserKit one.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_filterResponse">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="createCrawlerFromContent" id="_createCrawlerFromContent">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>createCrawlerFromContent(<span>string <var>$uri</var></span>, <span>string <var>$content</var></span>, <span>string <var>$type</var></span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a>|null</code>
+
+
+	<div class="expandable-collapsedView">
+		Creates a crawler.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Creates a crawler.</p>
+<p>This method returns null if the DomCrawler component is not available.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_createCrawlerFromContent">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="back" id="_back">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>back(): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Goes back in the browser history.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Goes back in the browser history.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_back">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="forward" id="_forward">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>forward(): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Goes forward in the browser history.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Goes forward in the browser history.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_forward">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="reload" id="_reload">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>reload(): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Reloads the current browser.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Reloads the current browser.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_reload">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="followRedirect" id="_followRedirect">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>followRedirect(): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Follow redirects?
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Follow redirects?</p>
+</div>
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="LogicException.html"><span>LogicException</span></a></code>&nbsp;</td>
+										<td><p>If request was not a redirect</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_followRedirect">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="restart" id="_restart">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>restart()</code>
+
+
+	<div class="expandable-collapsedView">
+		Restarts the client.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Restarts the client.</p>
+<p>It flushes history and all cookies.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_restart">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getAbsoluteUri" id="_getAbsoluteUri">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>getAbsoluteUri(<span>string <var>$uri</var></span>): string</code>
+
+
+	<div class="expandable-collapsedView">
+		Takes a URI and converts it to absolute if it is not already absolute.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Takes a URI and converts it to absolute if it is not already absolute.</p>
+</div>
+
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getAbsoluteUri">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="requestFromRequest" id="_requestFromRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code>requestFromRequest(<span><a href="Symfony.Component.BrowserKit.Request.html"><span title="Symfony\Component\BrowserKit\Request">Request</span></a> <var>$request</var></span>, <span>bool <var>$changeHistory</var> = <span class="php-kw">true</span></span>): <a href="Symfony.Component.DomCrawler.Crawler.html"><span title="Symfony\Component\DomCrawler\Crawler">Crawler</span></a></code>
+
+
+	<div class="expandable-collapsedView">
+		Makes a request from a Request object directly.
+	</div>
+
+	<div class="expandable-expandedView">
+	<div class="description"><p>Makes a request from a Request object directly.</p>
+</div>
+
+							<h4>Parameters</h4>
+							<table>
+									<tr>
+										<td><var>$changeHistory</var>&nbsp;&nbsp;</td>
+										<td><p>Whether to update the history or not (only used internally for back(), forward(), and reload())</p>
+</td>
+									</tr>
+							</table>
+
+
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_requestFromRequest">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+
+
+
+		<table class="table" id="properties">
+			<tr>
+				<th class="table-heading sortable" colspan="4" title="Switch between natural and alphabetical order">Properties</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="history" id="$history">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$history</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$history">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="cookieJar" id="$cookieJar">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$cookieJar</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$cookieJar">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="server" id="$server">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$server</var> = []</code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$server">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="internalRequest" id="$internalRequest">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$internalRequest</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$internalRequest">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="request" id="$request">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$request</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$request">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="internalResponse" id="$internalResponse">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$internalResponse</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$internalResponse">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="response" id="$response">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$response</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$response">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="crawler" id="$crawler">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$crawler</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$crawler">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="insulated" id="$insulated">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$insulated</var> = <span class="php-kw">false</span></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$insulated">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="redirect" id="$redirect">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$redirect</var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$redirect">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="followRedirects" id="$followRedirects">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$followRedirects</var> = <span class="php-kw">true</span></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$followRedirects">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="followMetaRefresh" id="$followMetaRefresh">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap"></code>
+			</td>
+
+			<td class="table-cell">
+<code><var>$followMetaRefresh</var> = <span class="php-kw">false</span></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$followMetaRefresh">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+		</div>
+
+		<div class="layout-footer">
+			 API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.6</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>

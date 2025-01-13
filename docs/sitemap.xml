@@ -21,7 +21,7 @@
 			<url><loc>NgatNgay.Http.Browser.html</loc></url>
 			<url><loc>NgatNgay.Http.Curl.html</loc></url>
 			<url><loc>NgatNgay.Http.Request.html</loc></url>
-			<url><loc>NgatNgay.IResponse.html</loc></url>
+			<url><loc>NgatNgay.Http.Response.html</loc></url>
 			<url><loc>NgatNgay.Session.Storage.Apcu.html</loc></url>
 			<url><loc>NgatNgay.Str.html</loc></url>
 
@@ -41,6 +41,7 @@
 			<url><loc>source-Http.Browser.html</loc></url>
 			<url><loc>source-Http.Curl.html</loc></url>
 			<url><loc>source-Http.Request.html</loc></url>
+			<url><loc>source-Http.Response.html</loc></url>
 			<url><loc>source-Session.Storage.Apcu.html</loc></url>
 			<url><loc>source-Str.html</loc></url>
 			<url><loc>source-function.html</loc></url>
