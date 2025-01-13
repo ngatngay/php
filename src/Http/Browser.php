@@ -7,10 +7,11 @@ use Symfony\Component\BrowserKit\History;
 use Symfony\Component\BrowserKit\CookieJar;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class Browser extends HttpBrowser {
+class Browser extends HttpBrowser
+{
     public function __construct(?HttpClientInterface $client = null, ?History $history = null, ?CookieJar $cookieJar = null)
     {
-        parent::__construct($client ?? new Client(), $history, $cookieJar);
+        parent::__construct($client ?? new Client(), $history, $cookieJar); // @phpstan-ignore-line
     }
     
     public function setUserAgent(string $userAgent) {

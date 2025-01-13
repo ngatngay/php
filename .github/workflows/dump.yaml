@@ -20,8 +20,5 @@ jobs:
 
       - name: docs
         run: bash gen_docs.sh
- 
-      - name: dump
-        run: php dump.php
- 
+  
       - uses: stefanzweifel/git-auto-commit-action@v5

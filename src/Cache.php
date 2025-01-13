@@ -2,16 +2,6 @@
 
 namespace NgatNgay;
 
-use Symfony\Component\Cache\Adapter\ApcuAdapter;
-use Symfony\Component\Cache\Adapter\ChainAdapter;
-use Symfony\Component\Cache\Adapter\RedisAdapter;
-use Symfony\Component\Cache\Adapter\PdoAdapter;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Component\HttpFoundation\Request;
-use Psr\Container\ContainerInterface;
-use Illuminate\Database\Capsule\Manager as Capsule;
-use Symfony\Component\Cache\Psr16Cache;
-
 class Cache
 {
     private static $adapter;

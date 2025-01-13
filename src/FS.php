@@ -28,15 +28,7 @@ class FS
 
     public static function getExtension(string $name): string
     {
-        $name = strval($name);
-
-        preg_match('/\.([^\.]*$)/', $name, $extension);
-
-        if (is_array($extension) && sizeof($extension) > 0) {
-            return strtolower($extension[1]);
-        }
-
-        return '';
+        return (new \SplFileInfo($name))->getExtension();
     }
 
     /**
@@ -81,7 +73,7 @@ class FS
     {
         if ($objs = glob($dir . "/*")) {
             foreach ($objs as $obj) {
-                is_dir($obj) ? $this->removeDir($obj) : $this->remove($obj);
+                is_dir($obj) ? self::removeDir($obj) : self::remove($obj);
             }
         }
 

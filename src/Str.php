@@ -2,8 +2,6 @@
 
 namespace NgatNgay;
 
-// best string helper
-
 class Str
 {
     /**

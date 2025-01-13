@@ -7,40 +7,46 @@ class Apcu implements \SessionHandlerInterface
     private string $prefix;
     private int $ttl;
 
-    public function __construct(string $prefix = 'sess_', int $ttl = 86400)
+    public function __construct($prefix = 'sess_', $ttl = 86400)
     {
         $this->prefix = $prefix;
         $this->ttl = $ttl;
     }
 
-    public function close(): bool
+    #[\ReturnTypeWillChange]
+    public function close()
     {
         return true;
     }
     
-    public function destroy(string $id): bool
+    #[\ReturnTypeWillChange]
+    public function destroy($id)
     {
         $key = $this->prefix . $id; 
         return apcu_delete($key);
     }
 
-    public function gc(int $max_lifetime): int|false
+    #[\ReturnTypeWillChange]
+    public function gc($max_lifetime)
     {
-        return true;
+        return 1;
     }
     
-    public function open(string $path, string $name): bool
+    #[\ReturnTypeWillChange]
+    public function open($path, $name)
     {
         return true;
     }
 
-    public function read(string $id): string | false
+    #[\ReturnTypeWillChange]
+    public function read($id)
     {
         $key = $this->prefix . $id; 
         return apcu_exists($key) ? apcu_fetch($key) : '';
     }
     
-    public function write(string $id, string $data): bool
+    #[\ReturnTypeWillChange]
+    public function write($id, $data)
     {
         $key = $this->prefix . $id; 
         return apcu_store($key, $data, $this->ttl);

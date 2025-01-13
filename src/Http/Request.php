@@ -19,7 +19,7 @@ class Request
         ksort($this->server);
 
         $this->header = $this->initHeader();
-        
+
         /*
         {
     $request_uri = @parse_url($_SERVER['REQUEST_URI'] ?? '');
@@ -38,17 +38,11 @@ class Request
         $this->post = &$_POST;
         $this->cookie = &$_COOKIE;
         $this->request = &$_REQUEST;
-        
-        // Đọc payload JSON từ request body
-$jsonPayload = file_get_contents('php://input');
 
-// Giải mã JSON thành mảng PHP
-$data = @json_decode($jsonPayload, true);
-
-// Kiểm tra và xử lý dữ liệu
-if (json_last_error() === JSON_ERROR_NONE) {
-    $this->payload = $data;
-}
+        $data = @json_decode(file_get_contents('php://input'), true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            $this->payload = $data;
+        }
     }
 
     private function initHeader()
@@ -56,7 +50,6 @@ if (json_last_error() === JSON_ERROR_NONE) {
         $headers = [];
 
         foreach ($this->server as $name => $value) {
-
             if (substr($name, 0, 5) == 'http_') {
                 $headers[str_replace('_', '-', substr($name, 5))] = $value;
             }
@@ -82,7 +75,7 @@ if (json_last_error() === JSON_ERROR_NONE) {
 
     public function getMethod()
     {
-        return strtolower($this->server['request_method']);
+        return strtolower($this->server['request_method'] ?? 'get');
     }
 
     public function isMethod(string $value)
@@ -99,7 +92,7 @@ if (json_last_error() === JSON_ERROR_NONE) {
             'http_forwarded_for',
             'http_forwarded',
             'remote_addr'
-        ];        
+        ];
         foreach ($keys as $key) {
             if (isset($this->server[$key])) {
                 return $this->server[$key];
@@ -114,12 +107,15 @@ if (json_last_error() === JSON_ERROR_NONE) {
         return $this->header['user-agent'] ?? '';
     }
 
-public function getReferer()
-{
-    return $this->header['referer'] ?? '';
-}
+    public function getReferer()
+    {
+        return $this->header['referer'] ?? '';
+    }
 
-
+    public function getHost()
+    {
+        return $this->server['server_name'];
+    }
     public function getBaseUrl()
     {
         return ($this->server['request_scheme'] ?? 'http')
@@ -130,7 +126,7 @@ public function getReferer()
     public function getUri(string $mode = 'full')
     {
         $uri = $this->server['request_uri'];
-        
+
         switch ($mode) {
             case 'request':
                 return $uri;
@@ -138,7 +134,7 @@ public function getReferer()
                 return strtok($uri, '?');
             default:
                 return $this->getBaseUrl() . $uri;
-        }   
+        }
     }
 
     public function get($key, $default = null)
@@ -178,7 +174,7 @@ public function getReferer()
     {
         return isset($this->cookie[$key]);
     }
-    
+
     public function sessionStart(string $prefix = 'sess_', int $ttl = 86400)
     {
         session_set_save_handler(new \NgatNgay\Session\Storage\Apcu($prefix, $ttl));
@@ -186,7 +182,7 @@ public function getReferer()
         if (PHP_SESSION_ACTIVE === session_status()) {
             throw new \RuntimeException('Failed to start the session: already started by PHP.');
         }
-        
+
         if (!\session_start()) {
             throw new \RuntimeException('Failed to start the session.');
         }
@@ -200,10 +196,12 @@ public function getReferer()
     {
         return isset($this->session[$key]);
     }
-    public function setSession($key, $value) {
+    public function setSession($key, $value)
+    {
         $_SESSION[$key] = $value;
     }
-    public function removeSession($key) {
+    public function removeSession($key)
+    {
         unset($_SESSION[$key]);
     }
 
@@ -224,7 +222,7 @@ public function getReferer()
     {
         return isset($this->request[$key]);
     }
-    
+
     public function payload($key, $default = null)
     {
         return $this->payload[$key] ?? $default;

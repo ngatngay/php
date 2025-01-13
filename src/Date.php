@@ -11,7 +11,7 @@ class Date
 
     public static function startDay($day)
     {
-        return mktime(00, 00, 00, date('n'), $day);
+        return mktime(00, 00, 00, (int) date('n'), $day);
     }
 
     public static function startMonth($month)
@@ -22,7 +22,6 @@ class Date
     public static function startYear()
     {
     }
-
 
     public static function currentDay()
     {
@@ -36,7 +35,7 @@ class Date
 
     public static function currentYear()
     {
-        date('Y');
+        return date('Y');
     }
 
     public static function displayAgo($time)
