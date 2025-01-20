@@ -4,10 +4,10 @@
     "require": {
         "php": ">=7.4",
         "php-curl-class/php-curl-class": "^11.0",
-        "symfony/browser-kit": "*",
-        "symfony/cache": "*",
-        "symfony/http-client": "*",
-        "symfony/var-dumper": "*"
+        "symfony/browser-kit": ">=5.4",
+        "symfony/cache": ">=5.4",
+        "symfony/http-client": ">=5.4",
+        "symfony/var-dumper": ">=5.4"
     },
     "autoload": {
         "psr-4": {

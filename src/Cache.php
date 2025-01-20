@@ -8,8 +8,9 @@ class Cache
     private static array $adapters = [];
     private static ?int $expire = null;
     private static string $prefix = '';
-    
-    public static function setPrefix($prefix) {
+
+    public static function setPrefix($prefix)
+    {
         self::$prefix = $prefix;
     }
 
@@ -17,21 +18,22 @@ class Cache
     {
         self::$adapter = self::$adapters[$key];
     }
-    
+
     public static function getAdaper($key)
     {
         return self::$adapters[$key];
     }
-    
+
     public static function addAdapter($key, $adapter)
     {
         self::$adapters = array_merge(self::$adapters, [$key => $adapter]);
     }
 
-    public function removeAdapter($key) {
+    public function removeAdapter($key)
+    {
         unset(self::$adapters[$key]);
     }
-    
+
     public static function getAdapters()
     {
         return self::$adapters;
@@ -47,10 +49,10 @@ class Cache
     public static function get($key, ?callable $default = null, $expire = null)
     {
         $item = self::$adapter->getItem(self::$prefix . $key);
-        
+
         if (!$item->isHit() && is_callable($default)) {
             $value = call_user_func($default);
-            self::set($key, $value, $expire);         
+            self::set($key, $value, $expire);
             return $value;
         }
 
@@ -63,7 +65,7 @@ class Cache
 
         if ($expire !== null) {
             $item->expiresAfter($expire);
-        } else if (self::$expire !== null) {
+        } elseif (self::$expire !== null) {
             $item->expiresAfter(self::$expire);
         }
 
@@ -76,7 +78,7 @@ class Cache
         $key = self::$prefix . $key;
         return self::$adapter->deleteItem($key);
     }
-    
+
     public static function setDefaultExpire($ttl = null)
     {
         self::$expire = $ttl;

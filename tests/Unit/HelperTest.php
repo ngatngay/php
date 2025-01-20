@@ -1,8 +1,8 @@
 <?php
 
-use NgatNgay\Helper\Arr;
-use NgatNgay\Helper\Str;
-use NgatNgay\Helper\FS;
+use NgatNgay\Arr;
+use NgatNgay\Str;
+use NgatNgay\FS;
 
 test('array test', function () {
     $arr = [];

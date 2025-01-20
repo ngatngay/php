@@ -62,11 +62,32 @@ class FS
         return $s;
     }
 
-    public static function remove($path)
-    {
-        if (file_exists($path)) {
-            unlink($path);
+    public static function remove(string $path): bool
+    {        
+        if (!file_exists($path)) {
+            return true;
         }
+
+        if (is_link($path)) {
+            return unlink($path);
+        }
+
+        if (is_file($path)) {
+            return unlink($path);
+        }
+
+        if (is_dir($path)) {
+            $files = array_diff(scandir($path), ['.', '..']);
+            foreach ($files as $file) {
+                $filePath = $path . DIRECTORY_SEPARATOR . $file;
+                if (!self::remove($filePath)) {
+                    return false;
+                }
+            }
+            return rmdir($path);
+        }
+
+        throw new \Exception('remove error, not match file type');
     }
 
     public static function removeDir($dir, $remove_this = true)

@@ -7,6 +7,7 @@ use PDO;
 class Database
 {
     private PDO $pdo;
+    
     public function __construct($pdo = null)
     {
         $this->pdo = $pdo;
@@ -14,23 +15,10 @@ class Database
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [Statement::class]);
     }
 
-    public function query(string $sql, $params = null)
+    public function query(string $sql, ?array $params = null)
     {
-        $stmt = $this->pdo->prepare($sql);
-if (is_array($params)) {
-$i = 0;
-foreach ($params as $key => $value) {
-$i++;
-    if (is_string($key)) {
-$stmt->bindValue($key, $value);
-    } else {
-$stmt->bindValue($i, $value);
-}
-}
-}
-
-//dump($params);
-        $stmt->execute();
+        $stmt = $this->pdo->prepare($sql);   
+        $stmt->execute($params);
 
         return $stmt;
     }
@@ -40,7 +28,7 @@ $stmt->bindValue($i, $value);
         $sql = 'insert into "' . $table . '"'
             . ' (' . implode(',', $this->buildName(array_keys($params))) . ')'
             . ' values (' . implode(',', array_fill(0, count($params), '?')) . ')';
-        //dump(array_values($params));
+        
         $this->query($sql, array_values($params));
 
         return $this->pdo->lastInsertId();
@@ -65,15 +53,15 @@ $stmt->bindValue($i, $value);
             ->fetchAll();
     }
 
-    public function getOffset(int $page, int $perPage)
-    {
-        return $page * $perPage - $perPage;
-    }
-
     public function fetchColumn(string $sql, $params = null, $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
+    }
+    
+    public function getOffset(int $page, int $perPage)
+    {
+        return $page * $perPage - $perPage;
     }
 
     public function quote(string $str)

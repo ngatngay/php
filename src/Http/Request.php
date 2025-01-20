@@ -6,6 +6,7 @@ class Request
 {
     public array $get;
     public array $post;
+    public array $file;
     public array $header;
     public array $cookie;
     public array $session;
@@ -36,6 +37,7 @@ class Request
 
         $this->get = &$_GET;
         $this->post = &$_POST;
+        $this->file = $_FILES;
         $this->cookie = &$_COOKIE;
         $this->request = &$_REQUEST;
 
@@ -43,6 +45,8 @@ class Request
         if (json_last_error() === JSON_ERROR_NONE) {
             $this->payload = $data;
         }
+
+        $this->initFile();
     }
 
     private function initHeader()
@@ -58,11 +62,37 @@ class Request
         return $headers;
     }
 
-    public function isCLI()
+    private function initFile()
+    {
+        if (empty($this->file)) {
+            return;
+        }
+        
+        $tmp = [];
+        foreach ($this->file as $key => $value) {
+            if (!is_array($this->file[$key]['name'])) {
+                $tmp[$key] = [$this->file[$key]];
+                continue;
+             }
+             
+             $fCount = count($this->file[$key]['name']);
+             $fKeys = array_keys($this->file[$key]);
+             
+             for($i = 0; $i < $fCount; $i++) {
+                 foreach ($fKeys as $fKey) {
+                     $tmp[$key][$i][$fKey] = $this->file[$key][$fKey][$i];
+                 }
+             }
+        }
+        
+        $this->file = $tmp;
+    }
+
+    public function isCLI(): bool
     {
         return php_sapi_name() === 'cli';
     }
-    public function isCLIServer()
+    public function isCLIServer(): bool
     {
         return php_sapi_name() === 'cli-server';
     }
@@ -99,7 +129,7 @@ class Request
             }
         }
 
-        return '0.0.0.0';
+        return '127.0.0.1';
     }
 
     public function getUserAgent()

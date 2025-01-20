@@ -4,23 +4,6 @@ namespace NgatNgay;
 
 class Arr
 {
-    public static function multipleUploadToSimple(array $fileUpload): array
-    {
-        $files = [];
-
-        foreach ($fileUpload as $k => $l) {
-            foreach ($l as $i => $v) {
-                if (!array_key_exists($i, $files)) {
-                    $files[$i] = [];
-                }
-
-                $files[$i][$k] = $v;
-            }
-        }
-
-        return $files;
-    }
-
     public static function getFromPage(array $data, int $page, int $perPage = 10): array
     {
         $result = [];
