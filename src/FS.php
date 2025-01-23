@@ -89,17 +89,4 @@ class FS
 
         throw new \Exception('remove error, not match file type');
     }
-
-    public static function removeDir($dir, $remove_this = true)
-    {
-        if ($objs = glob($dir . "/*")) {
-            foreach ($objs as $obj) {
-                is_dir($obj) ? self::removeDir($obj) : self::remove($obj);
-            }
-        }
-
-        if ($remove_this) {
-            rmdir($dir);
-        }
-    }
 }
