@@ -4,7 +4,7 @@ namespace NgatNgay\DesignPattern;
 
 use Exception;
 
-final class Singleton
+class Singleton
 {
     private static ?Singleton $instance = null;
 

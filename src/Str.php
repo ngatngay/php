@@ -13,7 +13,14 @@ class Str
         return strlen($string) === 0;
     }
 
-    public static function wordCut(string $string, int $words = 35, string $end = '...'): string
+    
+    /**
+     * @param string $string
+     * @param int $words
+     * @param string $end
+     * @return string
+     */
+    public static function wordCut($string, $words = 35, $end = '...')
     {
         preg_match('/^\s*+(?:\S++\s*+){1,' . $words . '}/u', $string, $matches);
 
@@ -22,11 +29,6 @@ class Str
         }
 
         return rtrim($matches[0]) . $end;
-    }
-
-    public static function nl2br(string $str): string
-    {
-        return str_replace(PHP_EOL, '<br />', $str);
     }
 
     public static function br2nl(string $str): string
