@@ -63,11 +63,7 @@ class fs
     }
 
     public static function remove(string $path): bool
-    {        
-        if (!file_exists($path)) {
-            return true;
-        }
-
+    {
         if (is_link($path)) {
             return unlink($path);
         }
