@@ -1,24 +1,24 @@
 <?php
 
-namespace NgatNgay;
+namespace ngatngay;
 
-use NgatNgay\Http\Request;
-use NgatNgay\Http\Response;
+use ngatngay\http\request;
+use ngatngay\http\response;
 
-function request(): Request
+function request(): request
 {
     static $instance = null;
 
     if ($instance === null) {
-        $instance = new Request();
+        $instance = new request();
     }
 
     return $instance;
 }
 
-function response($data = null, $status = 200, $headers = []): Response
+function response($data = null, $status = 200, $headers = []): response
 {
-    return new Response($data, $status, $headers);
+    return new response($data, $status, $headers);
 }
 
 function redirect(string $url, int $status = 301)

@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay\Http;
+namespace ngatngay\http;
 
-class Curl extends \Curl\Curl {
+class curl extends \Curl\Curl {
     public function __construct($base_url = null, $options = [])
     {
         parent::__construct($base_url, $options);

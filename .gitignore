@@ -2,6 +2,7 @@
 vendor/
 docs/
 
+error_log
 composer.phar
 apigen.phar
 *.cache

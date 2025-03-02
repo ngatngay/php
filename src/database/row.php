@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay\Database;
+namespace ngatngay\database;
 
-class Row extends \ArrayObject
+class row extends \ArrayObject
 {
     public function __get($name)
     {

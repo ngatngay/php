@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay;
+namespace ngatngay;
 
-class Str
+class str
 {
     /**
      * @param string $string

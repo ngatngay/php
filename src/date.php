@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay;
+namespace ngatngay;
 
-class Date
+class date
 {
     public static function now()
     {

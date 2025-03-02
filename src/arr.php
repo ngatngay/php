@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay;
+namespace ngatngay;
 
-class Arr
+class arr
 {
     public static function getFromPage(array $data, int $page, int $perPage = 10): array
     {

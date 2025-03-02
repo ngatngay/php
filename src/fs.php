@@ -1,9 +1,9 @@
 <?php
 
-namespace NgatNgay;
+namespace ngatngay;
 
 // file system
-class FS
+class fs
 {
     /*
      * file, file1, file2...

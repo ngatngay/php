@@ -1,13 +1,13 @@
 <?php
 
-namespace NgatNgay\Http;
+namespace ngatngay\http;
 
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\BrowserKit\History;
 use Symfony\Component\BrowserKit\CookieJar;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class Browser extends HttpBrowser
+class browser extends HttpBrowser
 {
     public function __construct(?HttpClientInterface $client = null, ?History $history = null, ?CookieJar $cookieJar = null)
     {

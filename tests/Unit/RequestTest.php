@@ -1,9 +1,9 @@
 <?php
 
-use NgatNgay\Http\Request;
+use ngatngay\http\request;
 
 test('test', function () {
-    $r = new Request();
+    $r = new request();
     
     expect($r->isCLI())->tobeTrue();
     expect($r->isCLIServer())->tobeFalse();

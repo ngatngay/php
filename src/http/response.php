@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay\Http;
+namespace ngatngay\http;
 
-class Response {
+class response {
     private $data;
     private $status;
     private array $headers = [];

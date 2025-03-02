@@ -1,10 +1,10 @@
 <?php
 
-namespace NgatNgay\Database;
+namespace ngatngay\database;
 
 use PDO;
 
-class Database
+class database
 {
     private PDO $pdo;
     
@@ -12,7 +12,7 @@ class Database
     {
         $this->pdo = $pdo;
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
-        $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [Statement::class]);
+        $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [statement::class]);
     }
 
     public function query(string $sql, ?array $params = null)

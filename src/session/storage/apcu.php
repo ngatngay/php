@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay\Session\Storage;
+namespace ngatngay\session\storage;
 
-class Apcu implements \SessionHandlerInterface
+class apcu implements \SessionHandlerInterface
 {
     private string $prefix;
     private int $ttl;

@@ -1,8 +1,8 @@
 <?php
 
-namespace NgatNgay\Http;
+namespace ngatngay\http;
 
-class Request
+class request
 {
     public array $get;
     public array $post;
@@ -144,7 +144,7 @@ class Request
 
     public function getHost()
     {
-        return $this->server['server_name'];
+        return $this->header('host');
     }
     public function getBaseUrl()
     {
@@ -207,7 +207,7 @@ class Request
 
     public function sessionStart(string $prefix = 'sess_', int $ttl = 86400)
     {
-        session_set_save_handler(new \NgatNgay\Session\Storage\Apcu($prefix, $ttl));
+        session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
 
         if (PHP_SESSION_ACTIVE === session_status()) {
             throw new \RuntimeException('Failed to start the session: already started by PHP.');

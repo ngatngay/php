@@ -1,17 +1,17 @@
 <?php
 
-namespace NgatNgay\DesignPattern;
+namespace ngatngay\designpattern;
 
 use Exception;
 
-class Singleton
+class singleton
 {
-    private static ?Singleton $instance = null;
+    private static ?singleton $instance = null;
 
     /**
      * gets the instance via lazy initialization (created on first usage)
      */
-    public static function getInstance(): Singleton
+    public static function get_instance(): singleton
     {
         if (self::$instance === null) {
             self::$instance = new self();

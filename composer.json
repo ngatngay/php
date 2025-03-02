@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "NgatNgay\\": "src/"
+            "ngatngay\\": "src/"
         },
         "files": [
             "src/function.php"
