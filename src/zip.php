@@ -1,13 +1,15 @@
 <?php
 
-class zip extends ZipArchive {
+namespace ngatngay;
+
+class zip extends \ZipArchive {
     public function add($path, $relative = null)
     {
         if (!file_exists($path)) {
             return false;
         }
         
-        $file = new SplFileInfo($path);
+        $file = new \SplFileInfo($path);
         $path = $file->getPathname();
         $pathRelative = $path;
 
