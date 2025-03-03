@@ -11,7 +11,7 @@ class browser extends HttpBrowser
 {
     public function __construct(?HttpClientInterface $client = null, ?History $history = null, ?CookieJar $cookieJar = null)
     {
-        parent::__construct($client ?? new Client(), $history, $cookieJar); // @phpstan-ignore-line
+        parent::__construct($client ?? new client(), $history, $cookieJar); // @phpstan-ignore-line
     }
     
     public function setUserAgent(string $userAgent) {
