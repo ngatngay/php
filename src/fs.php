@@ -87,6 +87,10 @@ class fs
             }
             return rmdir($path);
         }
+        
+        if (!file_exists($path)) {
+            return true;
+        }
 
         throw new \Exception('remove error, not match file type');
     }
