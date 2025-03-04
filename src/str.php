@@ -13,7 +13,7 @@ class str
         return strlen($string) === 0;
     }
 
-    
+
     /**
      * @param string $string
      * @param int $words
@@ -66,5 +66,16 @@ class str
         ];
 
         return preg_replace(array_values($unicode), array_keys($unicode), $str);
+    }
+
+    public static function replace_first($needle, $replace, $haystack)
+    {
+        $pos = strpos($haystack, $needle);
+
+        if ($pos !== false) {
+            return substr_replace($haystack, $replace, $pos, strlen($needle));
+        }
+
+        return $haystack;
     }
 }

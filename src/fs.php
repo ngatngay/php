@@ -2,6 +2,11 @@
 
 namespace ngatngay;
 
+use FilesystemIterator;
+use RecursiveCallbackFilterIterator;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+
 // file system
 class fs
 {
@@ -84,5 +89,41 @@ class fs
         }
 
         throw new \Exception('remove error, not match file type');
+    }
+
+    public static function read_full_dir($path, $excludes = [])
+    {
+        $directory = new RecursiveDirectoryIterator(
+            $path,
+            FilesystemIterator::UNIX_PATHS
+            | FilesystemIterator::SKIP_DOTS
+        );
+
+        $filter = new RecursiveCallbackFilterIterator($directory, function ($current, $key, $iterator) use ($path, $excludes) {
+            $relativePath = str::replace_first($path, '', $current->getPathname());
+
+            foreach ($excludes as $exclude) {
+                if (empty($exclude)) {
+                    continue;
+                }
+                //var_dump($relativePath);
+                //var_dump($exclude);
+
+                $exclude = trim($exclude);
+                $exclude = trim($exclude, '/');
+                $relativePath = trim($relativePath, '/');
+
+                if (str_ends_with($relativePath, $exclude)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        return new RecursiveIteratorIterator(
+            $filter,
+            RecursiveIteratorIterator::SELF_FIRST
+        );
     }
 }
