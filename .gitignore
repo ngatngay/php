@@ -3,7 +3,6 @@ vendor/
 docs/
 
 error_log
-composer.phar
-apigen.phar
+*.phar
 *.cache
 composer.lock

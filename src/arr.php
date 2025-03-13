@@ -4,7 +4,7 @@ namespace ngatngay;
 
 class arr
 {
-    public static function getFromPage(array $data, int $page, int $perPage = 10): array
+    public static function get_from_page(array $data, int $page, int $perPage = 10): array
     {
         $result = [];
         $total = count($data);
@@ -26,7 +26,7 @@ class arr
         return $result;
     }
 
-    public static function toFile(string $filename, array $arr) {
+    public static function to_file(string $filename, array $arr) {
         return file_put_contents(
             $filename,
             '<?php return ' . var_export($arr, true) . ';'

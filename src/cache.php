@@ -4,71 +4,96 @@ namespace ngatngay;
 
 class cache
 {
-    private static $debug = false;
-    private static $adapter;
-    private static array $adapters = [];
+    private static bool $debug = false;
     private static ?int $expire = null;
     private static string $prefix = '';
 
-    public static function setDebug($debug) {
+    private static $adapter;
+    private static array $adapters = [];
+
+    // common
+
+    public static function set_debug(bool $debug)
+    {
         self::$debug = $debug;
     }
 
-    public static function setPrefix($prefix)
+    public static function set_prefix(string $prefix)
     {
         self::$prefix = $prefix;
     }
 
-    public static function setDefaultAdapter($key)
+    public static function set_expire(?int $ttl = null)
+    {
+        self::$expire = $ttl;
+    }
+
+    // adapter
+
+    public static function set_adapter(string $key)
     {
         self::$adapter = self::$adapters[$key];
     }
 
-    public static function getAdaper($key)
+    public static function get_adapter(string $key)
     {
         return self::$adapters[$key];
     }
 
-    public static function addAdapter($key, $adapter)
+    public static function add_adapter(string $key, $adapter)
     {
         self::$adapters = array_merge(self::$adapters, [$key => $adapter]);
     }
 
-    public function removeAdapter($key)
+    public function remove_adapter(string $key)
     {
         unset(self::$adapters[$key]);
     }
 
-    public static function getAdapters()
+    public static function get_adapters(): array
     {
         return self::$adapters;
     }
 
-    public static function has($key)
+    // cache
+
+    public static function has(string $key)
     {
         return self::$adapter->hasItem(self::$prefix . $key);
     }
 
     // truyen 1 tham so - lay binh thuong
     // truyen 2 tham so tro len - luu cache cho lan sau
-    public static function get($key, ?callable $default = null, $expire = null, $refresh = false)
+    public static function get(string $key, $default = null, array $opt = [])
     {
-        if (self::$debug || $refresh) {
+        $opt += [
+            'empty' => true,
+            'expire' => null,
+            'refresh' => false,
+        ];
+
+        if (self::$debug || $opt['refresh']) {
             self::remove(self::$prefix . $key);
         }
 
         $item = self::$adapter->getItem(self::$prefix . $key);
 
-        if (!$item->isHit() && is_callable($default)) {
-            $value = call_user_func($default);
-            self::set($key, $value, $expire);
-            return $value;
-        }
+        if ($item->isHit()) {
+            return $item->get();
+        } else {
+            if (is_callable($default)) {
+                $default = call_user_func($default);
+            }
 
-        return $item->get();
+            if ($opt['empty'] || (!$opt['empty'] && !empty($default))) {
+                self::set($key, $default, $opt['expire']);
+            }
+
+            return $default;
+        }
     }
 
-    public static function set($key, $value, $expire = null)
+    public static function set(string $key, $value, ?int $expire = null)
     {
         $item = self::$adapter->getItem(self::$prefix . $key);
 
@@ -82,14 +107,13 @@ class cache
         return self::$adapter->save($item);
     }
 
-    public static function remove($key)
+    public static function remove(string $key)
     {
-        $key = self::$prefix . $key;
-        return self::$adapter->deleteItem($key);
+        return self::$adapter->deleteItem(self::$prefix . $key);
     }
 
-    public static function setDefaultExpire($ttl = null)
+    public static function clear(string $prefix = '')
     {
-        self::$expire = $ttl;
+        return self::$adapter->clear($prefix);
     }
 }

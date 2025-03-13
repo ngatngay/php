@@ -52,14 +52,28 @@ class database
         return $this->query($sql, $params)
             ->fetchAll();
     }
+    public function fetch_all(string $sql, $params = null)
+    {
+        return $this->query($sql, $params)
+            ->fetchAll();
+    }
 
     public function fetchColumn(string $sql, $params = null, $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
     }
+    public function fetch_column(string $sql, $params = null, $column = 0)
+    {
+        $stmt = $this->query($sql, $params);
+        return $stmt->fetchColumn($column);
+    }
     
     public function getOffset(int $page, int $perPage)
+    {
+        return $page * $perPage - $perPage;
+    }
+    public function get_offset(int $page, int $perPage)
     {
         return $page * $perPage - $perPage;
     }
@@ -70,6 +84,12 @@ class database
     }
 
     public function buildName($arr)
+    {
+        return array_map(function ($item) {
+            return '"' . $item . '"';
+        }, $arr);
+    }
+    public function build_name($arr)
     {
         return array_map(function ($item) {
             return '"' . $item . '"';
