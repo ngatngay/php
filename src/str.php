@@ -20,7 +20,7 @@ class str
      * @param string $end
      * @return string
      */
-    public static function wordCut($string, $words = 35, $end = '...')
+    public static function word_cut($string, $words = 35, $end = '...')
     {
         preg_match('/^\s*+(?:\S++\s*+){1,' . $words . '}/u', $string, $matches);
 

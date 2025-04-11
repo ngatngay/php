@@ -9,36 +9,36 @@ class date
         return time();
     }
 
-    public static function startDay($day)
+    public static function start_day($day)
     {
         return mktime(00, 00, 00, (int) date('n'), $day);
     }
 
-    public static function startMonth($month)
+    public static function start_month($month)
     {
         return mktime(00, 00, 00, $month);
     }
 
-    public static function startYear()
+    public static function start_year()
     {
     }
 
-    public static function currentDay()
+    public static function current_day()
     {
         return date('d');
     }
 
-    public static function currentMonth()
+    public static function current_month()
     {
         return date('m');
     }
 
-    public static function currentYear()
+    public static function current_year()
     {
         return date('Y');
     }
 
-    public static function displayAgo($time)
+    public static function display_ago($time)
     {
         $time  = intval($time);
         $times = time() - $time;

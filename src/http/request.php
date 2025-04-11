@@ -19,7 +19,7 @@ class request
         $this->server = array_change_key_case($_SERVER);
         ksort($this->server);
 
-        $this->header = $this->initHeader();
+        $this->header = $this->init_header();
 
         /*
         {
@@ -46,10 +46,10 @@ class request
             $this->payload = $data;
         }
 
-        $this->initFile();
+        $this->init_file();
     }
 
-    private function initHeader()
+    private function init_header()
     {
         $headers = [];
 
@@ -62,7 +62,7 @@ class request
         return $headers;
     }
 
-    private function initFile()
+    private function init_file()
     {
         if (empty($this->file)) {
             return;
@@ -88,32 +88,32 @@ class request
         $this->file = $tmp;
     }
 
-    public function isCLI(): bool
+    public function is_cli(): bool
     {
         return php_sapi_name() === 'cli';
     }
-    public function isCLIServer(): bool
+    public function is_cli_erver(): bool
     {
         return php_sapi_name() === 'cli-server';
     }
 
-    public function getScriptName(): string
+    public function get_script_name(): string
     {
         return $this->server('script_name');
     }
 
 
-    public function getMethod()
+    public function get_method()
     {
         return strtolower($this->server['request_method'] ?? 'get');
     }
 
-    public function isMethod(string $value)
+    public function is_method(string $value)
     {
-        return strtolower($value) === $this->getMethod();
+        return strtolower($value) === $this->get_method();
     }
 
-    public function getClientIp()
+    public function get_client_ip()
     {
         $keys = [
             'http_client_ip',
@@ -132,28 +132,28 @@ class request
         return '127.0.0.1';
     }
 
-    public function getUserAgent()
+    public function get_user_agent()
     {
         return $this->header['user-agent'] ?? '';
     }
 
-    public function getReferer()
+    public function get_referer()
     {
         return $this->header['referer'] ?? '';
     }
 
-    public function getHost()
+    public function get_host()
     {
         return $this->header('host');
     }
-    public function getBaseUrl()
+    public function get_base_url()
     {
         return ($this->server['request_scheme'] ?? 'http')
             . '://'
             . ($this->server['server_name'] ?? 'localhost');
     }
 
-    public function getUri(string $mode = 'full')
+    public function get_uri(string $mode = 'full')
     {
         $uri = $this->server['request_uri'];
 
@@ -163,8 +163,12 @@ class request
             case 'no_query':
                 return strtok($uri, '?');
             default:
-                return $this->getBaseUrl() . $uri;
+                return $this->get_base_url() . $uri;
         }
+    }
+    
+    public function query_string() {
+        return (string) $this->server('query_string');
     }
 
     public function get($key, $default = null)
@@ -172,7 +176,7 @@ class request
         return $this->get[$key] ?? $default;
     }
 
-    public function hasGet($key)
+    public function has_get($key)
     {
         return isset($this->get[$key]);
     }
@@ -182,7 +186,7 @@ class request
         return $this->post[$key] ?? $default;
     }
 
-    public function hasPost($key)
+    public function has_post($key)
     {
         return isset($this->post[$key]);
     }
@@ -191,7 +195,7 @@ class request
     {
         return $this->header[$key] ?? $default;
     }
-    public function hasHeader($key)
+    public function has_header($key)
     {
         return isset($this->header[$key]);
     }
@@ -200,12 +204,12 @@ class request
     {
         return $this->cookie[$key] ?? $default;
     }
-    public function hasCookie($key)
+    public function has_cookie($key)
     {
         return isset($this->cookie[$key]);
     }
 
-    public function sessionStart(string $prefix = 'sess_', int $ttl = 86400)
+    public function session_start(string $prefix = 'sess_', int $ttl = 86400)
     {
         session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
 
@@ -222,15 +226,15 @@ class request
     {
         return $this->session[$key] ?? $default;
     }
-    public function hasSession($key)
+    public function has_session($key)
     {
         return isset($this->session[$key]);
     }
-    public function setSession($key, $value)
+    public function set_session($key, $value)
     {
         $_SESSION[$key] = $value;
     }
-    public function removeSession($key)
+    public function remove_session($key)
     {
         unset($_SESSION[$key]);
     }
@@ -239,7 +243,7 @@ class request
     {
         return $this->server[$key] ?? $default;
     }
-    public function hasServer($key)
+    public function has_server($key)
     {
         return isset($this->server[$key]);
     }
@@ -248,7 +252,7 @@ class request
     {
         return $this->request[$key] ?? $default;
     }
-    public function hasRequest($key)
+    public function has_request($key)
     {
         return isset($this->request[$key]);
     }
@@ -257,7 +261,7 @@ class request
     {
         return $this->payload[$key] ?? $default;
     }
-    public function hasPayload($key)
+    public function has_payload($key)
     {
         return isset($this->payload[$key]);
     }

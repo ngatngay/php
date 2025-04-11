@@ -13,7 +13,7 @@ class fs
     /*
      * file, file1, file2...
      */
-    function nameIncrement(string $file_name_body, string $file_ext): string
+    function name_increment(string $file_name_body, string $file_ext): string
     {
         $i = 1;
         $file_exists = true;
@@ -31,7 +31,7 @@ class fs
         return $file_save;
     }
 
-    public static function getExtension(string $name): string
+    public static function get_extension(string $name): string
     {
         return (new \SplFileInfo($name))->getExtension();
     }
@@ -40,7 +40,7 @@ class fs
      * @param $fileSize string
      * @return string
      */
-    public static function readableSize($fileSize)
+    public static function readable_size($fileSize)
     {
         $size = floatval($fileSize);
 

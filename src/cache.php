@@ -68,7 +68,7 @@ class cache
     {
         $opt += [
             'empty' => true,
-            'expire' => null,
+            'expire' => self::$expire,
             'refresh' => false,
         ];
 
@@ -82,7 +82,7 @@ class cache
             return $item->get();
         } else {
             if (is_callable($default)) {
-                $default = call_user_func($default);
+                $default = call_user_func($default, $opt);
             }
 
             if ($opt['empty'] || (!$opt['empty'] && !empty($default))) {
