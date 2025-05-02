@@ -23,7 +23,7 @@ function response($data = null, $status = 200, $headers = []): response
 
 function redirect(string $url, int $status = 301)
 {
-    ob_end_clean();
+    @ob_end_clean();
     http_response_code($status);
     header('Location: ' . $url);
     exit;

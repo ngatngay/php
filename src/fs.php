@@ -130,4 +130,8 @@ class fs
             RecursiveIteratorIterator::SELF_FIRST
         );
     }
+    
+    public static function join_path(...$paths) {
+        return preg_replace('#/+#', '/', implode('/', $paths));
+    }
 }
