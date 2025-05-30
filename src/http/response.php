@@ -6,10 +6,11 @@ class response {
     private $data;
     private $status;
     private array $headers = [];
+    private static bool $is_sended = false;
 
     public function __construct(
-        $data,
-        $status,
+        $data = null,
+        $status = 200,
         $headers = []
     ) {
         $this->data = $data;
@@ -45,6 +46,14 @@ class response {
 
     public function send()
     {
+        static $is_sended;
+
+        if ($is_sended) {
+            return;
+        } else {
+            $is_sended = true;
+        }
+
         if (is_array($this->data)) {
             $this->json();
         }

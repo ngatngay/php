@@ -10,7 +10,7 @@ test('array test', function () {
         $arr[] = $i;
     }
 
-    expect(arr::get_from_page($arr, 10))
+    expect(arr::get_by_page(10, 10, $arr))
         ->toEqual([90, 91, 92, 93, 94]);
 });
 

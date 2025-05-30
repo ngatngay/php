@@ -106,6 +106,33 @@ class cache
         $item->set($value);
         return self::$adapter->save($item);
     }
+    
+    // update without change ttl
+    public static function update(string $key, $value) {
+        
+        $item = self::$adapter->getItem($key);
+dd($item);
+    if (!$item->isHit()) {
+        return false;
+    }
+    
+    $item->set($value);
+    
+    
+        
+        // Lấy thời gian hết hạn còn lại nếu có
+        $expiration = $item->getExpiration(); // instanceof DateTimeInterface|null
+        $ttl = $expiration ? $expiration->getTimestamp() - time() : null;
+
+        if ($ttl !== null) {
+            $item->expiresAfter($ttl);
+        } elseif (self::$expire !== null) {
+            $item->expiresAfter(self::$expire);
+        }
+    
+
+    return self::$adapter->save($item);
+    }
 
     public static function remove(string $key)
     {

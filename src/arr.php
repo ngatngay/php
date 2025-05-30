@@ -4,26 +4,10 @@ namespace ngatngay;
 
 class arr
 {
-    public static function get_from_page(array $data, int $page, int $perPage = 10): array
+    public static function get_by_page(int $page, int $per_page, array $data): array
     {
-        $result = [];
-        $total = count($data);
-        $start = ($page - 1) * $perPage;
-        $end = $start + $perPage;
-
-        if ($start < 0) {
-            $start = 0;
-        }
-
-        if ($end > $total) {
-            $end = $total;
-        }
-
-        for ($start; $start < $end; $start++) {
-            $result[] = $data[$start];
-        }
-
-        return $result;
+        $offset = ($page - 1) * $per_page;
+        return array_slice($data, $offset, $per_page);
     }
 
     public static function to_file(string $filename, array $arr) {

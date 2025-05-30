@@ -35,6 +35,27 @@ class fs
     {
         return (new \SplFileInfo($name))->getExtension();
     }
+    
+    public static function size(string $path) {
+        if (!is_dir($path)) {
+            return filesize($path);
+        }
+
+    $size = 0;
+
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS | FilesystemIterator::FOLLOW_SYMLINKS),
+        RecursiveIteratorIterator::LEAVES_ONLY
+    );
+
+    foreach ($iterator as $file) {
+        if ($file->isFile()) {
+            $size += $file->getSize();
+        }
+    }
+
+    return $size;
+    }
 
     /**
      * @param $fileSize string

@@ -5,9 +5,9 @@ use ngatngay\http\request;
 test('test', function () {
     $r = new request();
     
-    expect($r->isCLI())->tobeTrue();
-    expect($r->isCLIServer())->tobeFalse();
-    expect($r->getClientIp())->toBe('127.0.0.1');
-    expect($r->getUserAgent())->toBe('');
-    expect($r->getBaseUrl())->toBe('http://localhost');
+    expect($r->is_cli())->tobeTrue();
+    expect($r->is_cli_server())->tobeFalse();
+    expect($r->get_client_ip())->toBe('127.0.0.1');
+    expect($r->get_user_agent())->toBe('');
+    expect($r->get_base_url())->toBe('http://localhost');
 });

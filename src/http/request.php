@@ -16,6 +16,7 @@ class request
 
     public function __construct()
     {
+        
         $this->server = array_change_key_case($_SERVER);
         ksort($this->server);
 
@@ -92,7 +93,7 @@ class request
     {
         return php_sapi_name() === 'cli';
     }
-    public function is_cli_erver(): bool
+    public function is_cli_server(): bool
     {
         return php_sapi_name() === 'cli-server';
     }
@@ -211,7 +212,7 @@ class request
 
     public function session_start(string $prefix = 'sess_', int $ttl = 86400)
     {
-        session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
+        //session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
 
         if (PHP_SESSION_ACTIVE === session_status()) {
             throw new \RuntimeException('Failed to start the session: already started by PHP.');
@@ -246,6 +247,10 @@ class request
     public function has_server($key)
     {
         return isset($this->server[$key]);
+    }
+    
+    public function file($key) {
+        return $this->file[$key] ?? [];
     }
 
     public function request($key, $default = null)

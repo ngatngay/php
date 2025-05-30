@@ -78,4 +78,8 @@ class str
 
         return $haystack;
     }
+    
+    public static function to_unix(string $content): string {
+    return str_replace("\r\n", "\n", $content);
+}
 }

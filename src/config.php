@@ -43,4 +43,11 @@ class config
 
         file_put_contents($this->config['file'], '<?php return ' . var_export($this->data, true) . ';');
     }
+    
+    public function remove(string $key)
+    {
+        unset($this->data[$this->prefix . $key]);
+
+        file_put_contents($this->config['file'], '<?php return ' . var_export($this->data, true) . ';');
+    }
 }
