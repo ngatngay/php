@@ -6,3 +6,9 @@ parameters:
     ignoreErrors:
         -
             identifier: booleanNot.alwaysTrue
+        -
+            identifier: property.onlyWritten
+        -
+            identifier: method.unused
+        -
+            identifier: property.unused

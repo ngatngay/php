@@ -2,19 +2,7 @@
 
 namespace ngatngay;
 
-use ngatngay\http\request;
 use ngatngay\http\response;
-
-function request(): request
-{
-    static $instance = null;
-
-    if ($instance === null) {
-        $instance = new request();
-    }
-
-    return $instance;
-}
 
 function response($data = null, $status = 200, $headers = []): response
 {

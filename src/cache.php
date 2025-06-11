@@ -111,7 +111,7 @@ class cache
     public static function update(string $key, $value) {
         
         $item = self::$adapter->getItem($key);
-dd($item);
+//dd($item);
     if (!$item->isHit()) {
         return false;
     }

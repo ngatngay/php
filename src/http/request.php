@@ -4,24 +4,13 @@ namespace ngatngay\http;
 
 class request
 {
-    public array $get;
-    public array $post;
-    public array $file;
-    public array $header;
-    public array $cookie;
-    public array $session;
-    public array $server;
-    public array $request;
-    public array $payload;
+    public static array $file;
+    public static array $header;
+    public static array $server;
+    public static array $payload;
 
-    public function __construct()
+    public static function init()
     {
-        
-        $this->server = array_change_key_case($_SERVER);
-        ksort($this->server);
-
-        $this->header = $this->init_header();
-
         /*
         {
     $request_uri = @parse_url($_SERVER['REQUEST_URI'] ?? '');
@@ -35,128 +24,79 @@ class request
     $_REQUEST = array_merge($_REQUEST, $add_get);
 }
 */
-
-        $this->get = &$_GET;
-        $this->post = &$_POST;
-        $this->file = $_FILES;
-        $this->cookie = &$_COOKIE;
-        $this->request = &$_REQUEST;
-
-        $data = @json_decode(file_get_contents('php://input'), true);
-        if (json_last_error() === JSON_ERROR_NONE) {
-            $this->payload = $data;
-        }
-
-        $this->init_file();
+        //self::init_payload();
+        //self::init_file();
     }
 
-    private function init_header()
+    // common
+
+    public static function is_cli(): bool
     {
-        $headers = [];
-
-        foreach ($this->server as $name => $value) {
-            if (substr($name, 0, 5) == 'http_') {
-                $headers[str_replace('_', '-', substr($name, 5))] = $value;
-            }
-        }
-
-        return $headers;
+        return \php_sapi_name() === 'cli';
     }
-
-    private function init_file()
+    public static function is_cli_server(): bool
     {
-        if (empty($this->file)) {
-            return;
-        }
-        
-        $tmp = [];
-        foreach ($this->file as $key => $value) {
-            if (!is_array($this->file[$key]['name'])) {
-                $tmp[$key] = [$this->file[$key]];
-                continue;
-             }
-             
-             $fCount = count($this->file[$key]['name']);
-             $fKeys = array_keys($this->file[$key]);
-             
-             for($i = 0; $i < $fCount; $i++) {
-                 foreach ($fKeys as $fKey) {
-                     $tmp[$key][$i][$fKey] = $this->file[$key][$fKey][$i];
-                 }
-             }
-        }
-        
-        $this->file = $tmp;
+        return \php_sapi_name() === 'cli-server';
     }
 
-    public function is_cli(): bool
+    public static function script_name(): string
     {
-        return php_sapi_name() === 'cli';
+        return self::server('script_name');
     }
-    public function is_cli_server(): bool
+
+    public static function method()
     {
-        return php_sapi_name() === 'cli-server';
+        return strtolower(self::server('REQUEST_METHOD', 'get'));
     }
 
-    public function get_script_name(): string
+    public static function is_method(string $value)
     {
-        return $this->server('script_name');
+        return strtolower($value) === self::method();
     }
 
-
-    public function get_method()
-    {
-        return strtolower($this->server['request_method'] ?? 'get');
-    }
-
-    public function is_method(string $value)
-    {
-        return strtolower($value) === $this->get_method();
-    }
-
-    public function get_client_ip()
+    public static function client_ip()
     {
         $keys = [
-            'http_client_ip',
-            'http_x_forwarded_for',
-            'http_x_forwarded',
-            'http_forwarded_for',
-            'http_forwarded',
-            'remote_addr'
+            'HTTP_CLIENT_IP',
+            'HTTP_X_FORWARDED_FOR',
+            'HTTP_X_FORWARDED',
+            'HTTP_FORWARDED_FOR',
+            'HTTP_FORWARDED',
+            'REMOTE_ADDR'
         ];
         foreach ($keys as $key) {
-            if (isset($this->server[$key])) {
-                return $this->server[$key];
+            if (isset($_SERVER[$key])) {
+                return $_SERVER[$key];
             }
         }
 
         return '127.0.0.1';
     }
 
-    public function get_user_agent()
+    public static function user_agent()
     {
-        return $this->header['user-agent'] ?? '';
+        return (string) self::header('user_agent');
     }
 
-    public function get_referer()
+    public static function referer()
     {
-        return $this->header['referer'] ?? '';
+        return (string) self::header('referer');
     }
 
-    public function get_host()
+    public static function host()
     {
-        return $this->header('host');
+        return (string) self::header('host');
     }
-    public function get_base_url()
+    public static function base_url()
     {
-        return ($this->server['request_scheme'] ?? 'http')
+        return self::server('request_scheme', 'http')
             . '://'
-            . ($this->server['server_name'] ?? 'localhost');
+            . self::server('server_name', 'localhost');
     }
 
-    public function get_uri(string $mode = 'full')
+    public static function uri(string $mode = 'full')
     {
-        $uri = $this->server['request_uri'];
+        $uri = self::server('request_uri');
 
         switch ($mode) {
             case 'request':
@@ -164,53 +104,73 @@ class request
             case 'no_query':
                 return strtok($uri, '?');
             default:
-                return $this->get_base_url() . $uri;
+                return self::base_url() . $uri;
         }
     }
-    
-    public function query_string() {
-        return (string) $this->server('query_string');
+
+    public static function query_string()
+    {
+        return (string) self::server('query_string');
     }
 
-    public function get($key, $default = null)
+    // HEADER
+    public static function header($key, $default = null)
     {
-        return $this->get[$key] ?? $default;
+        return $_SERVER['HTTP_' . strtoupper($key)] ?? $default;
+    }
+    public static function has_header($key)
+    {
+        return isset($_SERVER['HTTP_' . strtoupper($key)]);
     }
 
-    public function has_get($key)
+    // GET
+
+    public static function get($key, $default = null)
     {
-        return isset($this->get[$key]);
+        return $_GET[$key] ?? $default;
+    }
+    public static function has_get($key)
+    {
+        return isset($_GET[$key]);
+    }
+    public static function set_get($key, $value)
+    {
+        $_GET[$key] = $value;
     }
 
-    public function post($key, $default = null)
+    // POST
+
+    public static function post($key, $default = null)
     {
-        return $this->post[$key] ?? $default;
+        return $_POST[$key] ?? $default;
+    }
+    public static function has_post($key)
+    {
+        return isset($_POST[$key]);
+    }
+    public static function set_post($key, $value)
+    {
+        $_POST[$key] = $value;
     }
 
-    public function has_post($key)
+    // COOKIE
+
+    public static function cookie($key, $default = null)
     {
-        return isset($this->post[$key]);
+        return $_COOKIE[$key] ?? $default;
+    }
+    public static function has_cookie($key)
+    {
+        return isset($_COOKIE[$key]);
+    }
+    public static function set_cookie($key, $value)
+    {
+        $_COOKIE[$key] = $value;
     }
 
-    public function header($key, $default = null)
-    {
-        return $this->header[$key] ?? $default;
-    }
-    public function has_header($key)
-    {
-        return isset($this->header[$key]);
-    }
+    // SESSION
 
-    public function cookie($key, $default = null)
-    {
-        return $this->cookie[$key] ?? $default;
-    }
-    public function has_cookie($key)
-    {
-        return isset($this->cookie[$key]);
-    }
-
-    public function session_start(string $prefix = 'sess_', int $ttl = 86400)
+    public static function session_start(string $prefix = 'sess_', int $ttl = 86400)
     {
         //session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
 
@@ -221,53 +181,118 @@ class request
         if (!\session_start()) {
             throw new \RuntimeException('Failed to start the session.');
         }
-        $this->session = &$_SESSION;
     }
-    public function session($key, $default = null)
+    public static function session($key, $default = null)
     {
-        return $this->session[$key] ?? $default;
+        return $_SESSION[$key] ?? $default;
     }
-    public function has_session($key)
+    public static function has_session($key)
     {
-        return isset($this->session[$key]);
+        return isset($_SESSION[$key]);
     }
-    public function set_session($key, $value)
+    public static function set_session($key, $value)
     {
         $_SESSION[$key] = $value;
     }
-    public function remove_session($key)
+    public static function unset_session($key)
     {
         unset($_SESSION[$key]);
     }
 
-    public function server($key, $default = null)
+
+    // SERVER
+
+    public static function server($key, $default = null)
     {
-        return $this->server[$key] ?? $default;
+        return isset($_SERVER[$key]) ? $_SERVER[$key] : (isset($_SERVER[strtoupper($key)]) ? $_SERVER[strtoupper($key)] : $default);
     }
-    public function has_server($key)
+    public static function has_server($key): bool
     {
-        return isset($this->server[$key]);
-    }
-    
-    public function file($key) {
-        return $this->file[$key] ?? [];
+        return isset($_SERVER[$key]) ? true : isset($_SERVER[strtoupper($key)]);
     }
 
-    public function request($key, $default = null)
+    // FILES
+    private static function init_file()
     {
-        return $this->request[$key] ?? $default;
-    }
-    public function has_request($key)
-    {
-        return isset($this->request[$key]);
+        if (empty(self::$file)) {
+            return;
+        }
+
+        $tmp = [];
+        foreach (self::$file as $key => $value) {
+            if (!is_array(self::$file[$key]['name'])) {
+                $tmp[$key] = [self::$file[$key]];
+                continue;
+            }
+
+            $fCount = count(self::$file[$key]['name']);
+            $fKeys = array_keys(self::$file[$key]);
+
+            for ($i = 0; $i < $fCount; $i++) {
+                foreach ($fKeys as $fKey) {
+                    $tmp[$key][$i][$fKey] = self::$file[$key][$fKey][$i];
+                }
+            }
+        }
+
+        self::$file = $tmp;
     }
 
-    public function payload($key, $default = null)
+    public static function file($key)
     {
-        return $this->payload[$key] ?? $default;
+        if (!isset($_FILES[$$key])) {
+            return null;
+        }
+
+        if (!is_array($_FILES[$key]['name'])) {
+            return [$_FILES[$key]];
+        }
+
+        $tmp = [];
+        foreach (self::$file as $key => $value) {
+            if (!is_array(self::$file[$key]['name'])) {
+                $tmp[$key] = [self::$file[$key]];
+                continue;
+            }
+
+            $fCount = count(self::$file[$key]['name']);
+            $fKeys = array_keys(self::$file[$key]);
+
+            for ($i = 0; $i < $fCount; $i++) {
+                foreach ($fKeys as $fKey) {
+                    $tmp[$key][$i][$fKey] = self::$file[$key][$fKey][$i];
+                }
+            }
+        }
+
     }
-    public function has_payload($key)
+
+    // REQUEST
+
+    public static function request($key, $default = null)
     {
-        return isset($this->payload[$key]);
+        return $_REQUEST[$key] ?? $default;
+    }
+    public static function has_request($key)
+    {
+        return isset($_REQUEST[$key]);
+    }
+
+    // PAYLOAD
+
+    private static function init_payload()
+    {
+        $data = @json_decode(file_get_contents('php://input'), true);
+        if (json_last_error() === \JSON_ERROR_NONE) {
+            self::$payload = $data;
+        }
+    }
+    public static function has_payload($key)
+    {
+        return isset(self::$payload[$key]);
+    }
+    public static function payload($key, $default = null)
+    {
+        return self::$payload[$key] ?? $default;
     }
 }
