@@ -1,0 +1,8 @@
+.idea/
+vendor/
+docs/
+
+error_log
+*.phar
+*.cache
+composer.lock

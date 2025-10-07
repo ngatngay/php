@@ -1,0 +1,29 @@
+{
+    "name": "ngatngay/php",
+    "description": "ngatngay php",
+    "require": {
+        "php": ">=7.4.0",
+        "colinodell/json5": ">=2.3",
+        "php-curl-class/php-curl-class": ">=11.0",
+        "symfony/browser-kit": ">=5.4",
+        "symfony/cache": ">=5.4",
+        "symfony/css-selector": ">=5.4",
+        "symfony/http-client": ">=5.4",
+        "symfony/var-dumper": ">=5.4",
+        "symfony/yaml": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "ngatngay\\": "src/"
+        },
+        "files": [
+            "src/function.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}
