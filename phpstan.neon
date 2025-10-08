@@ -1,0 +1,16 @@
+parameters:
+    phpVersion: 70400
+    level: 6
+    paths:
+        - src/
+    ignoreErrors:
+        -
+            identifiers:
+                - missingType.return
+                - missingType.parameter
+                - missingType.iterableValue
+                - missingType.property
+                - property.onlyWritten
+                - missingType.generics
+                - property.unused
+

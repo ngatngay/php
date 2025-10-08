@@ -122,7 +122,7 @@ class request
     }
 
     // HEADER
-    public static function header(string $key = '', mixed $default = null)
+    public static function header(string $key = '', $default = null)
     {
         if ($key === '') {
             $headers = [];
@@ -144,7 +144,7 @@ class request
 
     // GET
 
-    public static function get(string $key = '', mixed $default = null)
+    public static function get(string $key = '', $default = null)
     {
         if ($key === '') {
             return $_GET;
@@ -156,14 +156,14 @@ class request
     {
         return isset($_GET[$key]);
     }
-    public static function set_get(string $key, mixed $value): void
+    public static function set_get(string $key, $value): void
     {
         $_GET[$key] = $value;
     }
 
     // POST
 
-    public static function post(string $key, mixed $default = null)
+    public static function post(string $key, $default = null)
     {
         if ($key === '') {
             return $_POST;
@@ -175,14 +175,14 @@ class request
     {
         return isset($_POST[$key]);
     }
-    public static function set_post(string $key, mixed $value): void
+    public static function set_post(string $key, $value): void
     {
         $_POST[$key] = $value;
     }
 
     // COOKIE
 
-    public static function cookie(string $key, mixed $default = null)
+    public static function cookie(string $key, $default = null)
     {
         if ($key === '') {
             return $_COOKIE;
@@ -213,7 +213,7 @@ class request
             throw new RuntimeException('Failed to start the session.');
         }
     }
-    public static function session(string $key, mixed $default = null)
+    public static function session(string $key, $default = null)
     {
         if ($key === '') {
             return $_SESSION;
@@ -225,7 +225,7 @@ class request
     {
         return isset($_SESSION[$key]);
     }
-    public static function set_session(string $key, mixed $value): void
+    public static function set_session(string $key, $value): void
     {
         $_SESSION[$key] = $value;
     }
@@ -237,7 +237,7 @@ class request
 
     // SERVER
 
-    public static function server(string $key, mixed $default = null)
+    public static function server(string $key, $default = null)
     {
         if ($key === '') {
             return $_SERVER;
@@ -281,7 +281,7 @@ class request
 
     // REQUEST
 
-    public static function request(string $key, mixed $default = null)
+    public static function request(string $key, $default = null)
     {
         if ($key === '') {
             return $_REQUEST;
@@ -304,7 +304,7 @@ class request
     {
         return isset(self::$payload[$key]);
     }
-    public static function payload(string $key = '', mixed $default = null)
+    public static function payload(string $key = '', $default = null)
     {
         if ($key === '') {
             return self::$payload;

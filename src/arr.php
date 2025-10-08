@@ -10,7 +10,7 @@ class arr
         return array_slice($data, $offset, $per_page);
     }
 
-    public static function to_file(string $filename, array $arr): int|false {
+    public static function to_file(string $filename, array $arr) {
         return file_put_contents(
             $filename,
             '<?php return ' . var_export($arr, true) . ';'

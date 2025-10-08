@@ -11,7 +11,7 @@ class row extends ArrayObject
         return $this[$name];
     }
 
-    public function __set(string $name, mixed $val): void
+    public function __set(string $name, $val): void
     {
         $this[$name] = $val;
     }

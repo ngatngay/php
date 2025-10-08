@@ -28,7 +28,7 @@ class config
         $this->prefix = $prefix;
     }
 
-    public function get(string $key, mixed $default = null)
+    public function get(string $key, $default = null)
     {
         if (file_exists($this->config['file'])) {
             $this->data = require $this->config['file'];
@@ -37,7 +37,7 @@ class config
         return $this->data[$this->prefix . $key] ?? $default;
     }
 
-    public function set(string $key, mixed $value): void
+    public function set(string $key, $value): void
     {
         $this->data[$this->prefix . $key] = $value;
 

@@ -4,13 +4,13 @@ namespace ngatngay\http;
 
 class response
 {
-    private mixed $data;
+    private $data;
     private int $status;
     private array $headers = [];
     private static bool $is_sended = false;
 
     public function __construct(
-        mixed $data = null,
+        $data = null,
         int $status = 200,
         array $headers = []
     ) {
@@ -19,7 +19,7 @@ class response
         $this->headers = $headers;
     }
 
-    public function data(mixed $data): self
+    public function data($data): self
     {
         $this->data = $data;
         return $this;

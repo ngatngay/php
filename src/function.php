@@ -4,7 +4,7 @@ namespace ngatngay;
 
 use ngatngay\http\response;
 
-function response(mixed $data = null, int $status = 200, array $headers = []): response
+function response($data = null, int $status = 200, array $headers = []): response
 {
     return new response($data, $status, $headers);
 }

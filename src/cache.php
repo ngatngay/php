@@ -8,7 +8,7 @@ class cache
     private static ?int $expire = null;
     private static string $prefix = '';
 
-    private static mixed $adapter;
+    private static $adapter;
     private static array $adapters = [];
 
     // common
@@ -40,7 +40,7 @@ class cache
         return self::$adapters[$key];
     }
 
-    public static function add_adapter(string $key, mixed $adapter): void
+    public static function add_adapter(string $key, $adapter): void
     {
         self::$adapters = array_merge(self::$adapters, [$key => $adapter]);
     }
@@ -64,7 +64,7 @@ class cache
 
     // truyen 1 tham so - lay binh thuong
     // truyen 2 tham so tro len - luu cache cho lan sau
-    public static function get(string $key, mixed $default = null, array $opt = [])
+    public static function get(string $key, $default = null, array $opt = [])
     {
         $opt += [
             'expire' => self::$expire,
@@ -107,7 +107,7 @@ class cache
         }
     }
 
-    public static function set(string $key, mixed $value, ?int $expire = null)
+    public static function set(string $key, $value, ?int $expire = null)
     {
         $item = self::$adapter->getItem(self::$prefix . $key);
 
