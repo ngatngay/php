@@ -118,7 +118,7 @@ class fs
         throw new Exception('remove error, not match file type');
     }
 
-    public static function read_full_dir(string $path, array $excludes = []): mixed
+    public static function read_full_dir(string $path, array $excludes = [])
     {
         $directory = new RecursiveDirectoryIterator(
             $path,

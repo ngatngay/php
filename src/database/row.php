@@ -6,7 +6,7 @@ use ArrayObject;
 
 class row extends ArrayObject
 {
-    public function __get(string $name): mixed
+    public function __get(string $name)
     {
         return $this[$name];
     }

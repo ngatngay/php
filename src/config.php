@@ -28,7 +28,7 @@ class config
         $this->prefix = $prefix;
     }
 
-    public function get(string $key, mixed $default = null): mixed
+    public function get(string $key, mixed $default = null)
     {
         if (file_exists($this->config['file'])) {
             $this->data = require $this->config['file'];

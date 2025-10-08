@@ -122,7 +122,7 @@ class request
     }
 
     // HEADER
-    public static function header(string $key = '', mixed $default = null): mixed
+    public static function header(string $key = '', mixed $default = null)
     {
         if ($key === '') {
             $headers = [];
@@ -144,7 +144,7 @@ class request
 
     // GET
 
-    public static function get(string $key = '', mixed $default = null): mixed
+    public static function get(string $key = '', mixed $default = null)
     {
         if ($key === '') {
             return $_GET;
@@ -163,7 +163,7 @@ class request
 
     // POST
 
-    public static function post(string $key, mixed $default = null): mixed
+    public static function post(string $key, mixed $default = null)
     {
         if ($key === '') {
             return $_POST;
@@ -182,7 +182,7 @@ class request
 
     // COOKIE
 
-    public static function cookie(string $key, mixed $default = null): mixed
+    public static function cookie(string $key, mixed $default = null)
     {
         if ($key === '') {
             return $_COOKIE;
@@ -213,7 +213,7 @@ class request
             throw new RuntimeException('Failed to start the session.');
         }
     }
-    public static function session(string $key, mixed $default = null): mixed
+    public static function session(string $key, mixed $default = null)
     {
         if ($key === '') {
             return $_SESSION;
@@ -237,7 +237,7 @@ class request
 
     // SERVER
 
-    public static function server(string $key, mixed $default = null): mixed
+    public static function server(string $key, mixed $default = null)
     {
         if ($key === '') {
             return $_SERVER;
@@ -281,7 +281,7 @@ class request
 
     // REQUEST
 
-    public static function request(string $key, mixed $default = null): mixed
+    public static function request(string $key, mixed $default = null)
     {
         if ($key === '') {
             return $_REQUEST;
@@ -304,7 +304,7 @@ class request
     {
         return isset(self::$payload[$key]);
     }
-    public static function payload(string $key = '', mixed $default = null): mixed
+    public static function payload(string $key = '', mixed $default = null)
     {
         if ($key === '') {
             return self::$payload;

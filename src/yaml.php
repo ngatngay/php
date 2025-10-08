@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml as Yaml2;
 
 class yaml
 {
-    public static function parse(string $data): mixed {
+    public static function parse(string $data) {
         return Yaml2::parse($data);
     }
     
@@ -18,7 +18,7 @@ class yaml
         file_put_contents($filename, Yaml2::dump($data, $inline, $indent, $flags));
     }
 
-    public static function parse_file(string $filename): mixed {
+    public static function parse_file(string $filename) {
         return Yaml2::parseFile($filename);
     }
 }

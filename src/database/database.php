@@ -15,7 +15,7 @@ class database
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [statement::class]);
     }
 
-    public function query(string $sql, ?array $params = null): mixed
+    public function query(string $sql, ?array $params = null)
     {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
@@ -23,7 +23,7 @@ class database
         return $stmt;
     }
 
-    public function insert(string $table, array $params): mixed
+    public function insert(string $table, array $params)
     {
         $sql = 'insert into "' . $table . '"'
             . ' (' . implode(',', $this->buildName(array_keys($params))) . ')'
@@ -67,36 +67,36 @@ class database
         }
     }
 
-    public function update(string $sql, ?array $params = null): mixed
+    public function update(string $sql, ?array $params = null)
     {
         $stmt = $this->query($sql, $params);
 
         return $stmt->rowCount();
     }
 
-    public function fetch(string $sql, ?array $params = null): mixed
+    public function fetch(string $sql, ?array $params = null)
     {
         return $this->query($sql, $params)
             ->fetch();
     }
 
-    public function fetchAll(string $sql, ?array $params = null): mixed
+    public function fetchAll(string $sql, ?array $params = null)
     {
         return $this->query($sql, $params)
             ->fetchAll();
     }
-    public function fetch_all(string $sql, ?array $params = null): mixed
+    public function fetch_all(string $sql, ?array $params = null)
     {
         return $this->query($sql, $params)
             ->fetchAll();
     }
 
-    public function fetchColumn(string $sql, ?array $params = null, int $column = 0): mixed
+    public function fetchColumn(string $sql, ?array $params = null, int $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
     }
-    public function fetch_column(string $sql, ?array $params = null, int $column = 0): mixed
+    public function fetch_column(string $sql, ?array $params = null, int $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);

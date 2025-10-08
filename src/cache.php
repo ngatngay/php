@@ -35,7 +35,7 @@ class cache
         self::$adapter = self::$adapters[$key];
     }
 
-    public static function get_adapter(string $key): mixed
+    public static function get_adapter(string $key)
     {
         return self::$adapters[$key];
     }
@@ -64,7 +64,7 @@ class cache
 
     // truyen 1 tham so - lay binh thuong
     // truyen 2 tham so tro len - luu cache cho lan sau
-    public static function get(string $key, mixed $default = null, array $opt = []): mixed
+    public static function get(string $key, mixed $default = null, array $opt = [])
     {
         $opt += [
             'expire' => self::$expire,
@@ -107,7 +107,7 @@ class cache
         }
     }
 
-    public static function set(string $key, mixed $value, ?int $expire = null): mixed
+    public static function set(string $key, mixed $value, ?int $expire = null)
     {
         $item = self::$adapter->getItem(self::$prefix . $key);
 
