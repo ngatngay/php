@@ -6,16 +6,27 @@ use PDO;
 
 class database
 {
-    private PDO $pdo;
+    /**
+     * @var PDO
+     */
+    private $pdo;
 
-    public function __construct(?PDO $pdo = null)
+    /**
+     * @param PDO|null $pdo
+     */
+    public function __construct($pdo = null)
     {
         $this->pdo = $pdo;
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [statement::class]);
     }
 
-    public function query(string $sql, ?array $params = null)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @return statement
+     */
+    public function query($sql, $params = null)
     {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
@@ -23,7 +34,12 @@ class database
         return $stmt;
     }
 
-    public function insert(string $table, array $params)
+    /**
+     * @param string $table
+     * @param array $params
+     * @return string
+     */
+    public function insert($table, $params)
     {
         $sql = 'insert into "' . $table . '"'
             . ' (' . implode(',', $this->buildName(array_keys($params))) . ')'
@@ -35,7 +51,13 @@ class database
     }
 
 
-    public function update_or_insert(string $table, array $con, array $arr): void
+    /**
+     * @param string $table
+     * @param array $con
+     * @param array $arr
+     * @return void
+     */
+    public function update_or_insert($table, $con, $arr)
     {
         $whereConditions = [];
         $whereParams = [];
@@ -67,62 +89,116 @@ class database
         }
     }
 
-    public function update(string $sql, ?array $params = null)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @return int
+     */
+    public function update($sql, $params = null)
     {
         $stmt = $this->query($sql, $params);
 
         return $stmt->rowCount();
     }
 
-    public function fetch(string $sql, ?array $params = null)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @return mixed
+     */
+    public function fetch($sql, $params = null)
     {
         return $this->query($sql, $params)
             ->fetch();
     }
 
-    public function fetchAll(string $sql, ?array $params = null)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @return array
+     */
+    public function fetchAll($sql, $params = null)
     {
         return $this->query($sql, $params)
             ->fetchAll();
     }
-    public function fetch_all(string $sql, ?array $params = null)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @return array
+     */
+    public function fetch_all($sql, $params = null)
     {
         return $this->query($sql, $params)
             ->fetchAll();
     }
 
-    public function fetchColumn(string $sql, ?array $params = null, int $column = 0)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @param int $column
+     * @return mixed
+     */
+    public function fetchColumn($sql, $params = null, $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
     }
-    public function fetch_column(string $sql, ?array $params = null, int $column = 0)
+    /**
+     * @param string $sql
+     * @param array|null $params
+     * @param int $column
+     * @return mixed
+     */
+    public function fetch_column($sql, $params = null, $column = 0)
     {
         $stmt = $this->query($sql, $params);
         return $stmt->fetchColumn($column);
     }
 
-    public function getOffset(int $page, int $perPage): int
+    /**
+     * @param int $page
+     * @param int $perPage
+     * @return int
+     */
+    public function getOffset($page, $perPage)
     {
         return $page * $perPage - $perPage;
     }
-    public function get_offset(int $page, int $perPage): int
+    /**
+     * @param int $page
+     * @param int $perPage
+     * @return int
+     */
+    public function get_offset($page, $perPage)
     {
         return $page * $perPage - $perPage;
     }
 
-    public function quote(string $str): string
+    /**
+     * @param string $str
+     * @return string
+     */
+    public function quote($str)
     {
         return $this->pdo->quote($str);
     }
 
-    public function buildName(array $arr): array
+    /**
+     * @param array $arr
+     * @return array
+     */
+    public function buildName($arr)
     {
         return array_map(function ($item) {
             return '"' . $item . '"';
         }, $arr);
     }
-    public function build_name(array $arr): array
+    /**
+     * @param array $arr
+     * @return array
+     */
+    public function build_name($arr)
     {
         return array_map(function ($item) {
             return '"' . $item . '"';

@@ -6,19 +6,42 @@ use Symfony\Component\Yaml\Yaml as Yaml2;
 
 class yaml
 {
-    public static function parse(string $data) {
+    /**
+     * @param string $data
+     * @return mixed
+     */
+    public static function parse($data) {
         return Yaml2::parse($data);
     }
     
-    public static function dump($data, int $inline = 2, int $indent = 4, int $flags = 0): string {
+    /**
+     * @param mixed $data
+     * @param int $inline
+     * @param int $indent
+     * @param int $flags
+     * @return string
+     */
+    public static function dump($data, $inline = 2, $indent = 4, $flags = 0) {
         return Yaml2::dump($data, $inline, $indent, $flags);
     }
 
-    public static function dump_file(string $filename, $data, int $inline = 2, int $indent = 4, int $flags = 0): void {
+    /**
+     * @param string $filename
+     * @param mixed $data
+     * @param int $inline
+     * @param int $indent
+     * @param int $flags
+     * @return void
+     */
+    public static function dump_file($filename, $data, $inline = 2, $indent = 4, $flags = 0) {
         file_put_contents($filename, Yaml2::dump($data, $inline, $indent, $flags));
     }
 
-    public static function parse_file(string $filename) {
+    /**
+     * @param string $filename
+     * @return mixed
+     */
+    public static function parse_file($filename) {
         return Yaml2::parseFile($filename);
     }
 }

@@ -6,7 +6,12 @@ use ZipArchive;
 use SplFileInfo;
 
 class zip extends ZipArchive {
-    public function add(string $path, ?string $relative = null): bool
+    /**
+     * @param string $path
+     * @param string|null $relative
+     * @return bool
+     */
+    public function add($path, $relative = null)
     {
         if (!file_exists($path)) {
             return false;

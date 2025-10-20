@@ -6,12 +6,17 @@ use Exception;
 
 class singleton
 {
-    private static ?singleton $instance = null;
+    /**
+     * @var self|null
+     */
+    private static $instance = null;
 
     /**
      * gets the instance via lazy initialization (created on first usage)
+     *
+     * @return self
      */
-    public static function get_instance(): singleton
+    public static function get_instance()
     {
         if (self::$instance === null) {
             self::$instance = new self();

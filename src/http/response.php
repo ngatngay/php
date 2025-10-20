@@ -5,32 +5,58 @@ namespace ngatngay\http;
 class response
 {
     private $data;
-    private int $status;
-    private array $headers = [];
-    private static bool $is_sended = false;
+    /**
+     * @var int
+     */
+    private $status;
+    /**
+     * @var array
+     */
+    private $headers = [];
+    /**
+     * @var bool
+     */
+    private static $is_sended = false;
 
+    /**
+     * @param mixed $data
+     * @param int $status
+     * @param array $headers
+     */
     public function __construct(
         $data = null,
-        int $status = 200,
-        array $headers = []
+        $status = 200,
+        $headers = []
     ) {
         $this->data = $data;
         $this->status = $status;
         $this->headers = $headers;
     }
 
-    public function data($data): self
+    /**
+     * @param mixed $data
+     * @return self
+     */
+    public function data($data)
     {
         $this->data = $data;
         return $this;
     }
-    public function status(int $status): self
+    /**
+     * @param int $status
+     * @return self
+     */
+    public function status($status)
     {
         $this->status = $status;
         return $this;
     }
 
-    public function json(bool $prettify = false): self
+    /**
+     * @param bool $prettify
+     * @return self
+     */
+    public function json($prettify = false)
     {
         $this->headers += ['Content-Type: application/json'];
 
@@ -49,13 +75,20 @@ class response
         return $this;
     }
 
-    public function headers(array $headers): self
+    /**
+     * @param array $headers
+     * @return self
+     */
+    public function headers($headers)
     {
         $this->headers = $headers;
         return $this;
     }
 
-    public function send(): void
+    /**
+     * @return void
+     */
+    public function send()
     {
         static $is_sended;
 
@@ -88,7 +121,12 @@ class response
         }
     }
 
-    public static function close_output_buffers(int $targetLevel, bool $flush): void
+    /**
+     * @param int $targetLevel
+     * @param bool $flush
+     * @return void
+     */
+    public static function close_output_buffers($targetLevel, $flush)
     {
         $status = ob_get_status(true);
         $level = \count($status);

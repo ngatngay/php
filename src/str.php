@@ -13,7 +13,13 @@ class str
         return strlen($string) === 0;
     }
 
-    public static function word_cut(string $string, int $words = 35, string $end = '...'): string
+    /**
+     * @param string $string
+     * @param int $words
+     * @param string $end
+     * @return string
+     */
+    public static function word_cut($string, $words = 35, $end = '...')
     {
         preg_match('/^\s*+(?:\S++\s*+){1,' . $words . '}/u', $string, $matches);
 
@@ -24,12 +30,20 @@ class str
         return rtrim($matches[0]) . $end;
     }
 
-    public static function br2nl(string $str): string
+    /**
+     * @param string $str
+     * @return string
+     */
+    public static function br2nl($str)
     {
         return preg_replace('#<br\s*/?>#i', PHP_EOL, $str);
     }
 
-    public static function length(string $str): int
+    /**
+     * @param string $str
+     * @return int
+     */
+    public static function length($str)
     {
         return mb_strlen($str);
     }
@@ -61,7 +75,13 @@ class str
         return preg_replace(array_values($unicode), array_keys($unicode), $str);
     }
 
-    public static function replace_first(string $needle, string $replace, string $haystack): string
+    /**
+     * @param string $needle
+     * @param string $replace
+     * @param string $haystack
+     * @return string
+     */
+    public static function replace_first($needle, $replace, $haystack)
     {
         $pos = strpos($haystack, $needle);
 
@@ -72,7 +92,11 @@ class str
         return $haystack;
     }
     
-    public static function to_unix(string $content): string {
-    return str_replace("\r\n", "\n", $content);
-}
+    /**
+     * @param string $content
+     * @return string
+     */
+    public static function to_unix($content) {
+        return str_replace("\r\n", "\n", $content);
+    }
 }

@@ -3,7 +3,11 @@
 namespace ngatngay\http;
 
 class curl extends \Curl\Curl {
-    public function __construct(?string $base_url = null, array $options = [])
+    /**
+     * @param string|null $base_url
+     * @param array $options
+     */
+    public function __construct($base_url = null, $options = [])
     {
         parent::__construct($base_url, $options);
         $this->setDefaultJsonDecoder($assoc = true);

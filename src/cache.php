@@ -4,67 +4,127 @@ namespace ngatngay;
 
 class cache
 {
-    private static bool $debug = false;
-    private static ?int $expire = null;
-    private static string $prefix = '';
+    /**
+     * @var bool
+     */
+    private static $debug = false;
 
+    /**
+     * @var int|null
+     */
+    private static $expire = null;
+
+    /**
+     * @var string
+     */
+    private static $prefix = '';
+
+    /**
+     * @var mixed
+     */
     private static $adapter;
-    private static array $adapters = [];
+
+    /**
+     * @var array
+     */
+    private static $adapters = [];
 
     // common
 
-    public static function set_debug(bool $debug): void
+    /**
+     * @param bool $debug
+     * @return void
+     */
+    public static function set_debug($debug)
     {
         self::$debug = $debug;
     }
 
-    public static function set_prefix(string $prefix): void
+    /**
+     * @param string $prefix
+     * @return void
+     */
+    public static function set_prefix($prefix)
     {
         self::$prefix = $prefix;
     }
 
-    public static function set_expire(?int $ttl = null): void
+    /**
+     * @param int|null $ttl
+     * @return void
+     */
+    public static function set_expire($ttl = null)
     {
         self::$expire = $ttl;
     }
 
     // adapter
 
-    public static function set_adapter(string $key): void
+    /**
+     * @param string $key
+     * @return void
+     */
+    public static function set_adapter($key)
     {
         self::$adapter = self::$adapters[$key];
     }
 
-    public static function get_adapter(string $key)
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public static function get_adapter($key)
     {
         return self::$adapters[$key];
     }
 
-    public static function add_adapter(string $key, $adapter): void
+    /**
+     * @param string $key
+     * @param mixed $adapter
+     * @return void
+     */
+    public static function add_adapter($key, $adapter)
     {
         self::$adapters = array_merge(self::$adapters, [$key => $adapter]);
     }
 
-    public function remove_adapter(string $key): void
+    /**
+     * @param string $key
+     * @return void
+     */
+    public function remove_adapter($key)
     {
         unset(self::$adapters[$key]);
     }
 
-    public static function get_adapters(): array
+    /**
+     * @return array
+     */
+    public static function get_adapters()
     {
         return self::$adapters;
     }
 
     // cache
 
-    public static function has(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has($key)
     {
         return self::$adapter->hasItem(self::$prefix . $key);
     }
 
     // truyen 1 tham so - lay binh thuong
     // truyen 2 tham so tro len - luu cache cho lan sau
-    public static function get(string $key, $default = null, array $opt = [])
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @param array $opt
+     * @return mixed
+     */
+    public static function get($key, $default = null, $opt = [])
     {
         $opt += [
             'expire' => self::$expire,
@@ -107,7 +167,13 @@ class cache
         }
     }
 
-    public static function set(string $key, $value, ?int $expire = null)
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @param int|null $expire
+     * @return bool
+     */
+    public static function set($key, $value, $expire = null)
     {
         $item = self::$adapter->getItem(self::$prefix . $key);
 
@@ -121,12 +187,20 @@ class cache
         return self::$adapter->save($item);
     }
 
-    public static function unset(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function unset($key)
     {
         return self::$adapter->deleteItem(self::$prefix . $key);
     }
 
-    public static function clear(string $prefix = ''): bool
+    /**
+     * @param string $prefix
+     * @return bool
+     */
+    public static function clear($prefix = '')
     {
         return self::$adapter->clear($prefix);
     }

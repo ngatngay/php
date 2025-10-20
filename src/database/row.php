@@ -6,12 +6,21 @@ use ArrayObject;
 
 class row extends ArrayObject
 {
-    public function __get(string $name)
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
     {
         return $this[$name];
     }
 
-    public function __set(string $name, $val): void
+    /**
+     * @param string $name
+     * @param mixed $val
+     * @return void
+     */
+    public function __set($name, $val)
     {
         $this[$name] = $val;
     }

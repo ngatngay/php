@@ -6,11 +6,20 @@ namespace ngatngay;
 
 class json
 {
+    /**
+     * @param mixed ...$args
+     * @return string|false
+     */
     public static function encode(...$args) {
         return json_encode(...$args);
     }
 
-    public static function decode(string $data, ...$args) {
+    /**
+     * @param string $data
+     * @param mixed ...$args
+     * @return mixed
+     */
+    public static function decode($data, ...$args) {
         $assoc = true;
         if (count($args) > 0) {
             $assoc = $args[0];
@@ -18,11 +27,21 @@ class json
         return json5_decode($data, $assoc, ...array_slice($args, 1));
     }
 
-    public static function encode_file(string $file, ...$args) {
+    /**
+     * @param string $file
+     * @param mixed ...$args
+     * @return int|false
+     */
+    public static function encode_file($file, ...$args) {
         return file_put_contents($file, json_encode(...$args));
     }
 
-    public static function decode_file(string $file, ...$args) {
+    /**
+     * @param string $file
+     * @param mixed ...$args
+     * @return mixed
+     */
+    public static function decode_file($file, ...$args) {
         $assoc = true;
         if (count($args) > 0) {
             $assoc = $args[0];

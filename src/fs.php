@@ -15,7 +15,12 @@ class fs
     /*
      * file, file1, file2...
      */
-    function name_increment(string $file_name_body, string $file_ext): string
+    /**
+     * @param string $file_name_body
+     * @param string $file_ext
+     * @return string
+     */
+    function name_increment($file_name_body, $file_ext)
     {
         $i = 1;
         $file_exists = true;
@@ -33,37 +38,45 @@ class fs
         return $file_save;
     }
 
-    public static function get_extension(string $name): string
+    /**
+     * @param string $name
+     * @return string
+     */
+    public static function get_extension($name)
     {
         return (new SplFileInfo($name))->getExtension();
     }
     
-    public static function size(string $path): int {
+    /**
+     * @param string $path
+     * @return int
+     */
+    public static function size($path) {
         if (!is_dir($path)) {
             return filesize($path);
         }
 
-    $size = 0;
+        $size = 0;
 
-    $iterator = new RecursiveIteratorIterator(
-        new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS | FilesystemIterator::FOLLOW_SYMLINKS),
-        RecursiveIteratorIterator::LEAVES_ONLY
-    );
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($path, FilesystemIterator::SKIP_DOTS | FilesystemIterator::FOLLOW_SYMLINKS),
+            RecursiveIteratorIterator::LEAVES_ONLY
+        );
 
-    foreach ($iterator as $file) {
-        if ($file->isFile()) {
-            $size += $file->getSize();
+        foreach ($iterator as $file) {
+            if ($file->isFile()) {
+                $size += $file->getSize();
+            }
         }
-    }
 
-    return $size;
+        return $size;
     }
 
     /**
-     * @param $fileSize string
+     * @param int $fileSize
      * @return string
      */
-    public static function readable_size(int $fileSize): string
+    public static function readable_size($fileSize)
     {
         $size = floatval($fileSize);
 
@@ -90,7 +103,11 @@ class fs
         return $s;
     }
 
-    public static function remove(string $path): bool
+    /**
+     * @param string $path
+     * @return bool
+     */
+    public static function remove($path)
     {
         if (is_link($path)) {
             return unlink($path);
@@ -118,7 +135,12 @@ class fs
         throw new Exception('remove error, not match file type');
     }
 
-    public static function read_full_dir(string $path, array $excludes = [])
+    /**
+     * @param string $path
+     * @param array $excludes
+     * @return RecursiveIteratorIterator
+     */
+    public static function read_full_dir($path, $excludes = [])
     {
         $directory = new RecursiveDirectoryIterator(
             $path,
@@ -154,7 +176,11 @@ class fs
         );
     }
     
-    public static function join_path(string ...$paths): string {
+    /**
+     * @param string ...$paths
+     * @return string
+     */
+    public static function join_path(...$paths) {
         return preg_replace('#/+#', '/', implode('/', $paths));
     }
 }

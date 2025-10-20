@@ -4,42 +4,69 @@ namespace ngatngay;
 
 class date
 {
-    public static function now(): int
+    /**
+     * @return int
+     */
+    public static function now()
     {
         return time();
     }
 
-    public static function start_day(int $day): int
+    /**
+     * @param int $day
+     * @return int
+     */
+    public static function start_day($day)
     {
         return mktime(00, 00, 00, (int) date('n'), $day);
     }
 
-    public static function start_month(int $month): int
+    /**
+     * @param int $month
+     * @return int
+     */
+    public static function start_month($month)
     {
         return mktime(00, 00, 00, $month);
     }
 
-    public static function start_year(): int
+    /**
+     * @return int
+     */
+    public static function start_year()
     {
         return 0;
     }
 
-    public static function current_day(): string
+    /**
+     * @return string
+     */
+    public static function current_day()
     {
         return date('d');
     }
 
-    public static function current_month(): string
+    /**
+     * @return string
+     */
+    public static function current_month()
     {
         return date('m');
     }
 
-    public static function current_year(): string
+    /**
+     * @return string
+     */
+    public static function current_year()
     {
         return date('Y');
     }
 
-    public static function display_ago(int $time): string
+    /**
+     * @param int $time
+     * @return string
+     */
+    public static function display_ago($time)
     {
         $times = time() - $time;
 

@@ -9,12 +9,21 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class browser extends HttpBrowser
 {
-    public function __construct(?HttpClientInterface $client = null, ?History $history = null, ?CookieJar $cookieJar = null)
+    /**
+     * @param HttpClientInterface|null $client
+     * @param History|null $history
+     * @param CookieJar|null $cookieJar
+     */
+    public function __construct($client = null, $history = null, $cookieJar = null)
     {
         parent::__construct($client ?? new client(), $history, $cookieJar); // @phpstan-ignore-line
     }
     
-    public function setUserAgent(string $userAgent): void {
+    /**
+     * @param string $userAgent
+     * @return void
+     */
+    public function setUserAgent($userAgent) {
         $this->setServerParameter('HTTP_USER_AGENT', $userAgent);
     }
 }

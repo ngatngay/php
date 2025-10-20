@@ -4,12 +4,31 @@ namespace ngatngay;
 
 class config
 {
-    private array $config = [];
-    private string $file;
-    private array $data = [];
-    private string $prefix = '';
+    /**
+     * @var array
+     */
+    private $config = [];
 
-    public function __construct(array $config)
+    /**
+     * @var string
+     */
+    private $file;
+
+    /**
+     * @var array
+     */
+    private $data = [];
+
+    /**
+     * @var string
+     */
+    private $prefix = '';
+
+    /**
+     * @param array $config
+     * @return void
+     */
+    public function __construct($config)
     {
         $this->config = array_merge([
             'driver' => 'memory'
@@ -23,12 +42,21 @@ class config
         }
     }
 
-    public function set_prefix(string $prefix): void
+    /**
+     * @param string $prefix
+     * @return void
+     */
+    public function set_prefix($prefix)
     {
         $this->prefix = $prefix;
     }
 
-    public function get(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public function get($key, $default = null)
     {
         if (file_exists($this->config['file'])) {
             $this->data = require $this->config['file'];
@@ -37,14 +65,23 @@ class config
         return $this->data[$this->prefix . $key] ?? $default;
     }
 
-    public function set(string $key, $value): void
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function set($key, $value)
     {
         $this->data[$this->prefix . $key] = $value;
 
         file_put_contents($this->config['file'], '<?php return ' . var_export($this->data, true) . ';');
     }
     
-    public function remove(string $key): void
+    /**
+     * @param string $key
+     * @return void
+     */
+    public function remove($key)
     {
         unset($this->data[$this->prefix . $key]);
 

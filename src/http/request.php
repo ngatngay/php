@@ -7,12 +7,30 @@ use RuntimeException;
 
 class request
 {
-    public static array $file;
-    public static array $header;
-    public static array $server;
-    public static array $payload;
+    /**
+     * @var array
+     */
+    public static $file;
 
-    public static function init(): void
+    /**
+     * @var array
+     */
+    public static $header;
+
+    /**
+     * @var array
+     */
+    public static $server;
+
+    /**
+     * @var array
+     */
+    public static $payload;
+
+    /**
+     * @return void
+     */
+    public static function init()
     {
         /*
         {
@@ -33,36 +51,58 @@ class request
 
     // common
 
-    public static function is_cli(): bool
+    /**
+     * @return bool
+     */
+    public static function is_cli()
     {
         return \php_sapi_name() === 'cli';
     }
-    public static function is_cli_server(): bool
+    /**
+     * @return bool
+     */
+    public static function is_cli_server()
     {
         return \php_sapi_name() === 'cli-server';
     }
 
-    public static function script_name(): string
+    /**
+     * @return string
+     */
+    public static function script_name()
     {
         return self::server('script_name');
     }
 
-    public static function method(): string
+    /**
+     * @return string
+     */
+    public static function method()
     {
         return strtolower((string) self::server('REQUEST_METHOD', 'get'));
     }
 
-    public static function is_method(string $value): bool
+    /**
+     * @param string $value
+     * @return bool
+     */
+    public static function is_method($value)
     {
         return strtolower($value) === self::method();
     }
     
-    public static function is_ajax(): bool {
+    /**
+     * @return bool
+     */
+    public static function is_ajax() {
         return self::has_header('X_REQUESTED_WITH') &&
            strtolower((string) self::header('X_REQUESTED_WITH')) === 'xmlhttprequest';
     }
 
-    public static function ip(): string
+    /**
+     * @return string
+     */
+    public static function ip()
     {
         $keys = [
             'HTTP_CLIENT_IP',
@@ -81,28 +121,44 @@ class request
         return '127.0.0.1';
     }
 
-    public static function user_agent(): string
+    /**
+     * @return string
+     */
+    public static function user_agent()
     {
         return (string) self::header('user_agent');
     }
 
-    public static function referer(): string
+    /**
+     * @return string
+     */
+    public static function referer()
     {
         return (string) self::header('referer');
     }
 
-    public static function host(): string
+    /**
+     * @return string
+     */
+    public static function host()
     {
         return (string) self::header('host');
     }
-    public static function base_url(): string
+    /**
+     * @return string
+     */
+    public static function base_url()
     {
         return self::server('request_scheme', 'http')
             . '://'
             . self::server('server_name', 'localhost');
     }
 
-    public static function uri(string $mode = 'full'): string
+    /**
+     * @param string $mode
+     * @return string
+     */
+    public static function uri($mode = 'full')
     {
         $uri = self::server('request_uri');
 
@@ -116,13 +172,21 @@ class request
         }
     }
 
-    public static function query_string(): string
+    /**
+     * @return string
+     */
+    public static function query_string()
     {
         return (string) self::server('query_string');
     }
 
     // HEADER
-    public static function header(string $key = '', $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function header($key = '', $default = null)
     {
         if ($key === '') {
             $headers = [];
@@ -137,14 +201,23 @@ class request
 
         return $_SERVER['HTTP_' . str_replace('-', '_', strtoupper($key))] ?? $default;
     }
-    public static function has_header(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_header($key)
     {
         return isset($_SERVER['HTTP_' . strtoupper($key)]);
     }
 
     // GET
 
-    public static function get(string $key = '', $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function get($key = '', $default = null)
     {
         if ($key === '') {
             return $_GET;
@@ -152,18 +225,32 @@ class request
 
         return $_GET[$key] ?? $default;
     }
-    public static function has_get(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_get($key)
     {
         return isset($_GET[$key]);
     }
-    public static function set_get(string $key, $value): void
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public static function set_get($key, $value)
     {
         $_GET[$key] = $value;
     }
 
     // POST
 
-    public static function post(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function post($key, $default = null)
     {
         if ($key === '') {
             return $_POST;
@@ -171,18 +258,32 @@ class request
 
         return $_POST[$key] ?? $default;
     }
-    public static function has_post(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_post($key)
     {
         return isset($_POST[$key]);
     }
-    public static function set_post(string $key, $value): void
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public static function set_post($key, $value)
     {
         $_POST[$key] = $value;
     }
 
     // COOKIE
 
-    public static function cookie(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function cookie($key, $default = null)
     {
         if ($key === '') {
             return $_COOKIE;
@@ -190,18 +291,32 @@ class request
 
         return $_COOKIE[$key] ?? $default;
     }
-    public static function has_cookie(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_cookie($key)
     {
         return isset($_COOKIE[$key]);
     }
-    public static function set_cookie(string $key, string $value): void
+    /**
+     * @param string $key
+     * @param string $value
+     * @return void
+     */
+    public static function set_cookie($key, $value)
     {
         $_COOKIE[$key] = $value;
     }
 
     // SESSION
 
-    public static function session_start(string $prefix = 'sess_', int $ttl = 86400): void
+    /**
+     * @param string $prefix
+     * @param int $ttl
+     * @return void
+     */
+    public static function session_start($prefix = 'sess_', $ttl = 86400)
     {
         //session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
 
@@ -213,7 +328,12 @@ class request
             throw new RuntimeException('Failed to start the session.');
         }
     }
-    public static function session(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function session($key, $default = null)
     {
         if ($key === '') {
             return $_SESSION;
@@ -221,15 +341,28 @@ class request
 
         return $_SESSION[$key] ?? $default;
     }
-    public static function has_session(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_session($key)
     {
         return isset($_SESSION[$key]);
     }
-    public static function set_session(string $key, $value): void
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public static function set_session($key, $value)
     {
         $_SESSION[$key] = $value;
     }
-    public static function unset_session(string $key): void
+    /**
+     * @param string $key
+     * @return void
+     */
+    public static function unset_session($key)
     {
         unset($_SESSION[$key]);
     }
@@ -237,7 +370,12 @@ class request
 
     // SERVER
 
-    public static function server(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function server($key, $default = null)
     {
         if ($key === '') {
             return $_SERVER;
@@ -245,13 +383,21 @@ class request
 
         return (string) (isset($_SERVER[$key]) ? $_SERVER[$key] : (isset($_SERVER[strtoupper($key)]) ? $_SERVER[strtoupper($key)] : $default));
     }
-    public static function has_server(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_server($key)
     {
         return isset($_SERVER[$key]) ? true : isset($_SERVER[strtoupper($key)]);
     }
 
     // FILES
-    public static function file(string $key): ?array
+    /**
+     * @param string $key
+     * @return array|null
+     */
+    public static function file($key)
     {
         if ($key === '') {
             return $_FILES;
@@ -281,7 +427,12 @@ class request
 
     // REQUEST
 
-    public static function request(string $key, $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function request($key, $default = null)
     {
         if ($key === '') {
             return $_REQUEST;
@@ -289,22 +440,38 @@ class request
 
         return $_REQUEST[$key] ?? $default;
     }
-    public static function has_request(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_request($key)
     {
         return isset($_REQUEST[$key]);
     }
 
     // PAYLOAD
 
-    public static function init_payload(): void
+    /**
+     * @return void
+     */
+    public static function init_payload()
     {
         self::$payload = json::decode(file_get_contents('php://input') ?: '[]', true);
     }
-    public static function has_payload(string $key): bool
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function has_payload($key)
     {
         return isset(self::$payload[$key]);
     }
-    public static function payload(string $key = '', $default = null)
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function payload($key = '', $default = null)
     {
         if ($key === '') {
             return self::$payload;

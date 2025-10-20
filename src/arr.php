@@ -4,13 +4,24 @@ namespace ngatngay;
 
 class arr
 {
-    public static function get_by_page(int $page, int $per_page, array $data): array
+    /**
+     * @param int $page
+     * @param int $per_page
+     * @param array $data
+     * @return array
+     */
+    public static function get_by_page($page, $per_page, $data)
     {
         $offset = ($page - 1) * $per_page;
         return array_slice($data, $offset, $per_page);
     }
 
-    public static function to_file(string $filename, array $arr) {
+    /**
+     * @param string $filename
+     * @param array $arr
+     * @return int|false
+     */
+    public static function to_file($filename, $arr) {
         return file_put_contents(
             $filename,
             '<?php return ' . var_export($arr, true) . ';'

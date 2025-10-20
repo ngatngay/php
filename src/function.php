@@ -4,12 +4,23 @@ namespace ngatngay;
 
 use ngatngay\http\response;
 
-function response($data = null, int $status = 200, array $headers = []): response
+/**
+ * @param mixed $data
+ * @param int $status
+ * @param array $headers
+ * @return response
+ */
+function response($data = null, $status = 200, $headers = [])
 {
     return new response($data, $status, $headers);
 }
 
-function redirect(string $url, int $status = 301): void
+/**
+ * @param string $url
+ * @param int $status
+ * @return void
+ */
+function redirect($url, $status = 301)
 {
     @ob_end_clean();
     http_response_code($status);
@@ -17,7 +28,10 @@ function redirect(string $url, int $status = 301): void
     exit;
 }
 
-function refresh(): void
+/**
+ * @return void
+ */
+function refresh()
 {
     ob_end_clean();
     header('Refresh:0');
