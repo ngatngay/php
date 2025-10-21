@@ -25,5 +25,8 @@
         "platform": {
             "php": "7.4"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
     }
 }

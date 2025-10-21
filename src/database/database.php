@@ -3,6 +3,7 @@
 namespace ngatngay\database;
 
 use PDO;
+use PDOStatement;
 
 class database
 {
@@ -24,7 +25,7 @@ class database
     /**
      * @param string $sql
      * @param array|null $params
-     * @return statement
+     * @return PDOStatement|false
      */
     public function query($sql, $params = null)
     {

@@ -2,12 +2,12 @@
 
 namespace ngatngay;
 
-use SplFileInfo;
 use Exception;
 use FilesystemIterator;
 use RecursiveCallbackFilterIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use SplFileInfo;
 
 // file system
 class fs
@@ -20,7 +20,7 @@ class fs
      * @param string $file_ext
      * @return string
      */
-    function name_increment($file_name_body, $file_ext)
+    public function name_increment($file_name_body, $file_ext)
     {
         $i = 1;
         $file_exists = true;
@@ -46,12 +46,13 @@ class fs
     {
         return (new SplFileInfo($name))->getExtension();
     }
-    
+
     /**
      * @param string $path
      * @return int
      */
-    public static function size($path) {
+    public static function size($path)
+    {
         if (!is_dir($path)) {
             return filesize($path);
         }
@@ -127,7 +128,7 @@ class fs
             }
             return rmdir($path);
         }
-        
+
         if (!file_exists($path)) {
             return true;
         }
@@ -175,12 +176,38 @@ class fs
             RecursiveIteratorIterator::SELF_FIRST
         );
     }
-    
+
     /**
      * @param string ...$paths
      * @return string
      */
-    public static function join_path(...$paths) {
+    public static function join_path(...$paths)
+    {
         return preg_replace('#/+#', '/', implode('/', $paths));
+    }
+
+    /**
+         * Lấy tên chủ sở hữu file theo tên file
+         * @param string $filename
+         * @return string
+         */
+    public static function get_owner_name($filename)
+    {
+        $owner_id = @fileowner($filename);
+        if ($owner_id === false) {
+            return '';
+        }
+        return self::get_owner_name_by_id($owner_id);
+    }
+
+    /**
+     * Lấy tên chủ sở hữu theo user ID
+     * @param int $id
+     * @return string
+     */
+    public static function get_owner_name_by_id($id)
+    {
+        $info = @posix_getpwuid($id);
+        return $info['name'] ?? '';
     }
 }
