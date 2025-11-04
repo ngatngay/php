@@ -1,8 +1,8 @@
 <?php
 
-namespace ngatngay\http;
+namespace nightmare\http;
 
-use ngatngay\json;
+use nightmare\json;
 use RuntimeException;
 
 class request
@@ -318,7 +318,7 @@ class request
      */
     public static function session_start($prefix = 'sess_', $ttl = 86400)
     {
-        //session_set_save_handler(new \ngatngay\session\storage\apcu($prefix, $ttl));
+        //session_set_save_handler(new \nightmare\session\storage\apcu($prefix, $ttl));
 
         if (PHP_SESSION_ACTIVE === session_status()) {
             throw new RuntimeException('Failed to start the session: already started by PHP.');

@@ -1,6 +1,6 @@
 {
     "name": "ngatngay/php",
-    "description": "ngatngay php",
+    "description": "php helper",
     "require": {
         "php": ">=7.4.0",
         "colinodell/json5": ">=2.3",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ngatngay\\": "src/"
+            "nightmare\\": "src/"
         },
         "files": [
             "src/function.php"

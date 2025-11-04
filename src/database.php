@@ -1,5 +1,5 @@
 <?php
 
-namespace ngatngay;
+namespace nightmare;
 
 class database extends database\database {}

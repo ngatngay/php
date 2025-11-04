@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay;
+namespace nightmare;
 
 class cache
 {

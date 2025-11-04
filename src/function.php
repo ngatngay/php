@@ -1,8 +1,8 @@
 <?php
 
-namespace ngatngay;
+namespace nightmare;
 
-use ngatngay\http\response;
+use nightmare\http\response;
 
 /**
  * @param mixed $data

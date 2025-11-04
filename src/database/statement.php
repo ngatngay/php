@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay\database;
+namespace nightmare\database;
 
 use PDOStatement;
 use PDO;

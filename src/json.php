@@ -2,7 +2,7 @@
 
 // json5
 
-namespace ngatngay;
+namespace nightmare;
 
 class json
 {

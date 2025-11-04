@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay\designpattern;
+namespace nightmare\designpattern;
 
 use Exception;
 

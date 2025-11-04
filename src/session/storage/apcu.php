@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay\session\storage;
+namespace nightmare\session\storage;
 
 use SessionHandlerInterface;
 use ReturnTypeWillChange;

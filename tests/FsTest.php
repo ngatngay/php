@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ngatngay\fs;
+use nightmare\fs;
 use PHPUnit\Framework\TestCase;
 
 final class FsTest extends TestCase

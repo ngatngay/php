@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay\http;
+namespace nightmare\http;
 
 class response
 {

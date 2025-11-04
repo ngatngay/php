@@ -1,7 +1,7 @@
 <?php
 
-namespace ngatngay\http;
+namespace nightmare\http;
 
 use Symfony\Component\HttpClient\HttpClient;
 
-class_alias(HttpClient::class, 'ngatngay\http\client_native');
+class_alias(HttpClient::class, 'nightmare\http\client_native');

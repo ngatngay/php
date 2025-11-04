@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay\http;
+namespace nightmare\http;
 
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\BrowserKit\History;

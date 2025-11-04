@@ -1,6 +1,6 @@
 <?php
 
-namespace ngatngay;
+namespace nightmare;
 
 use Symfony\Component\Yaml\Yaml as Yaml2;
 
