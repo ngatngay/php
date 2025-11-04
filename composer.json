@@ -3,6 +3,7 @@
     "description": "php helper",
     "require": {
         "php": ">=7.4.0",
+        "ngatngay/php-composer-plugin": ">=1.0",
         "colinodell/json5": ">=2.3",
         "php-curl-class/php-curl-class": ">=11.0",
         "symfony/browser-kit": ">=5.4",
