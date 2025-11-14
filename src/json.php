@@ -24,7 +24,12 @@ class json
         if (count($args) > 0) {
             $assoc = $args[0];
         }
-        return json5_decode($data, $assoc, ...array_slice($args, 1));
+        
+        try {
+            return json5_decode($data, $assoc, ...array_slice($args, 1));
+        } catch(\Throwable $e) {
+            return null;
+        }
     }
 
     /**
@@ -46,6 +51,6 @@ class json
         if (count($args) > 0) {
             $assoc = $args[0];
         }
-        return json5_decode(file_get_contents($file), $assoc, ...array_slice($args, 1));
+        return self::decode(file_get_contents($file), $assoc, ...array_slice($args, 1));
     }
 }
