@@ -9,7 +9,7 @@ class uuid
     public static function v4() {
         return uuid2::uuid4();
     }
-    public static function v7() {
-        return uuid2::uuid7();
+    public static function v7($date_time = null) {
+        return uuid2::uuid7($date_time);
     }
 }
