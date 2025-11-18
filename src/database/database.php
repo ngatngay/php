@@ -15,11 +15,30 @@ class database
     /**
      * @param PDO|null $pdo
      */
-    public function __construct($pdo = null)
-    {
-        $this->pdo = $pdo;
+    public function __construct(
+        $dsn,
+        $username = null,
+        $password = null,
+        $options = null
+    ) {
+        if ($dsn instanceof PDO) {
+            $this->pdo = $dsn;
+        } else {
+            $this->pdo = new PDO(
+                $dsn,
+                $username,
+                $password,
+                array_merge([
+                ], (array) $options)
+            );
+        }
+
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [statement::class]);
+        $this->pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET sql_mode="ANSI,TRADITIONAL"');
     }
 
     /**
