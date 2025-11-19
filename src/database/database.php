@@ -12,9 +12,6 @@ class database
      */
     private $pdo;
 
-    /**
-     * @param PDO|null $pdo
-     */
     public function __construct(
         $dsn,
         $username = null,
@@ -29,16 +26,17 @@ class database
                 $username,
                 $password,
                 array_merge([
+                    PDO::MYSQL_ATTR_INIT_COMMAND, 'SET sql_mode="ANSI,TRADITIONAL"'
                 ], (array) $options)
             );
         }
 
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $this->pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
         $this->pdo->setAttribute(PDO::ATTR_STATEMENT_CLASS, [statement::class]);
-        $this->pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET sql_mode="ANSI,TRADITIONAL"');
+
+        $this->pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
     }
 
     /**
@@ -130,6 +128,11 @@ class database
     {
         return $this->query($sql, $params)
             ->fetch();
+    }
+    
+    public function exec($sql)
+    {
+        return $this->pdo->exec($sql);
     }
 
     /**
