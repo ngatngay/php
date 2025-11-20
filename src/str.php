@@ -93,10 +93,14 @@ class str
     }
     
     /**
-     * @param string $content
+     * @param string $text
      * @return string
      */
-    public static function to_unix($content) {
-        return str_replace("\r\n", "\n", $content);
+    public static function to_unix_newline($text)
+    {
+        return str_replace([
+            "\r\n", // windows
+            "\r" // mac old
+        ], "\n", $text);
     }
 }
