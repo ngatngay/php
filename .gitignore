@@ -7,3 +7,6 @@ error_log
 *.cache
 composer.lock
 .phpunit.result.cache
+
+test.php
+
