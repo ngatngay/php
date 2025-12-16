@@ -4,10 +4,7 @@ namespace nightmare;
 
 class trie
 {
-    /* key => [
-        child
-        data
-    ] */
+    /** @var array */
     public $tree;
 
     public function __construct() {

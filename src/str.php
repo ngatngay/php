@@ -63,6 +63,7 @@ class str
             'o' => '/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/',
             'u' => '/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/',
             'y' => '/ý|ỳ|ỷ|ỹ|ỵ/',
+
             'A' => '/Á|À|Ả|Ã|Ạ|Ă|Ắ|Ặ|Ằ|Ằ|Ẵ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ/',
             'D' => '/Đ/',
             'E' => '/É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ/',
@@ -102,5 +103,26 @@ class str
             "\r\n", // windows
             "\r" // mac old
         ], "\n", $text);
+    }
+
+    /**
+     * @param string $str
+     * @return string
+     */
+    public function to_url($str) {
+        $str = trim($str);
+        $str = strtolower($str);
+        $str = self::vn2en($str);
+
+        $str = html_entity_decode($str, ENT_QUOTES, 'UTF-8');
+
+        $str = str_replace('&', '-and-', $str);
+        $str = str_replace(' ', '-', $str);
+
+        $str = preg_replace('#[^a-z0-9\-]#', '', $str);
+        $str = preg_replace('#[-]{2,}#', '-', $str);
+        $str = trim($str, '-');
+
+        return $str;
     }
 }
