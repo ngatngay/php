@@ -15,18 +15,19 @@ class trie
     }
 
     public function add($str, $data = '') {
-        $str = trim($str);
+        $length = mb_strlen($str);
 
-        if (empty($str)) {
+        if (!$length) {
             return false;
         }
 
-        $length = mb_strlen($str);
         $tree = &$this->tree;
+        $chars = mb_str_split($str);
+        $i = 0;
 
-        for ($i = 0; $i < $length; $i++) {
-            $char = $str[$i];
-            $is_end = $i === ($length - 1);
+        foreach ($chars as $char) {
+            $i++;
+            $is_end = $i === $length;
 
             if (!isset($tree['child'][$char])) {
                 $tree['child'][$char] = [
@@ -43,31 +44,31 @@ class trie
         }
     }
 
-    // array
+    // false, array
     public function search($str) {
-    }
+        $length = mb_strlen($str);
 
-    // false = no, string
-    public function search_data($str) {
-        $str = trim($str);
-
-        if (empty($str)) {
+        if (!$length) {
             return false;
         }
-
-        $length = mb_strlen($str);
+   
         $tree = &$this->tree;
+        $chars = mb_str_split($str);
+        $i = 0;
 
-        for ($i = 0; $i < $length; $i++) {
-            $char = $str[$i];
-            $is_end = $i === ($length - 1);
+        foreach ($chars as $char) {
+            $i++;
+            $is_end = $i === $length;
 
             if (!isset($tree['child'][$char])) {
                 return false;
             }
 
             if ($is_end) {
-                return $tree['child'][$char]['data'] ?? '';
+                return [
+                    'data' => $tree['child'][$char]['data'] ?? '',
+                    'is_end' => count($tree['child'][$char]['child']) === 0
+                ];
             }
 
             $tree = &$tree['child'][$char];
